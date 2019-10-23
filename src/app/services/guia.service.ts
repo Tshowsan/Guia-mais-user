@@ -36,4 +36,9 @@ export class GuiaService {
     return this.userCollection.doc<User>(id).valueChanges();
   }
 
+  getGuiaRapido() {
+    const gr = this.afs.collection('Guias', ref => ref.where('nome', '==', "robson") );
+    return gr.valueChanges();
+  }
+
 }

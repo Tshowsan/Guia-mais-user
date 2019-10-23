@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
    
     try {
       await this.authService.login(this.user);
-      console.log("logado com sucesso")
+      // console.log("logado com sucesso")
     this.router.navigate(['/tabs/tab1'])
     } catch (error) {
       this.presentToast(error.message);
