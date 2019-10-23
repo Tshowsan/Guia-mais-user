@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+  
+      <ion-title>Detalhes do Guia</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+
+  <ion-card>
+
+      <ion-list padding>
+
+        <ion-item id="rounded">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input type="text" [(ngModel)]="user.nome" disabled="true"></ion-input>
+        </ion-item>
+
+        <ion-item id="rounded">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="text" [(ngModel)]="user.email" disabled="true"></ion-input>
+        </ion-item>
+
+        <ion-item id="rounded">
+          <ion-label position="floating">Telefone</ion-label>
+          <ion-input type="string" [(ngModel)]="user.telefone" disabled="true"></ion-input>
+        </ion-item>
+
+        <!-- <ion-item id="rounded">
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="text" disabled="true"></ion-input>
+        </ion-item> -->
+
+      </ion-list>
+
+  </ion-card>
+  
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title> Meus Dados </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+
+        <ion-list padding>
+  
+          <ion-item id="rounded">
+            <ion-label position="floating">Nome</ion-label>
+            <ion-input type="text" [(ngModel)]="user.nome" disabled="true"></ion-input>
+          </ion-item>
+  
+          <ion-item id="rounded">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="text" [(ngModel)]="user.email" disabled="true"></ion-input>
+          </ion-item>
+  
+          <ion-item id="rounded">
+            <ion-label position="floating">Telefone</ion-label>
+            <ion-input type="string" [(ngModel)]="user.telefone" disabled="true"></ion-input>
+          </ion-item>
+  
+          <!-- <ion-item id="rounded">
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="text" disabled="true"></ion-input>
+          </ion-item> -->
+  
+        </ion-list>
+  
+        <ion-button  type="submit" shape="round" expand="expand" color="success">
+            Alterar
+        </ion-button>
+    
+        <ion-button  type="button" (click)="voltar()" shape="round" expand="expand" color="warning">
+            Voltar
+        </ion-button>
+  
+    </ion-card>
+  
+  </ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title> Login </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card-login">
+
+    <ion-card class="card-form">
+
+      <ion-item id="rounded">
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+
+      <ion-item id="rounded">
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" value="" [(ngModel)]="user.password"></ion-input>
+      </ion-item>  
+
+
+      <ion-button class="button" type="button" (click)="logar()"  shape="round" expand="full" color="primary">
+          Entrar
+      </ion-button>
+
+      <ion-button  type="button" (click)="cadastrar()" shape="round" expand="full" color="warning">
+          Cadastrar
+      </ion-button>
+
+    </ion-card>
+    
+  </ion-card>
+</ion-content>
+
