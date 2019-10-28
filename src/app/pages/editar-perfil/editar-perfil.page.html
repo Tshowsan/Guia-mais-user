@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Editar perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card>
+
+    <ion-list padding>
+
+      <ion-item id="rounded">
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="user.nome"></ion-input>
+      </ion-item>
+
+      <ion-item id="rounded">
+        <ion-label position="floating">Telefone</ion-label>
+        <ion-input type="string" [(ngModel)]="user.telefone"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item id="rounded">
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="text" disabled="true"></ion-input>
+      </ion-item> -->
+
+      <ion-button  (click)="updateUser()" shape="round" expand="expand" color="success" [routerLink]="['/tabs/tab2']">
+        Alterar
+    </ion-button>
+
+    </ion-list>
+
+</ion-card>
+
+</ion-content>

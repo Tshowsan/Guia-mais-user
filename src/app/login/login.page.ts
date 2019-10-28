@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private afa: AngularFireAuth,
-    private afs:AngularFirestore) { }
+    private afs: AngularFirestore) { }
 
   ngOnInit() {
   }

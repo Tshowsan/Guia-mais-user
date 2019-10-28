@@ -37,7 +37,7 @@ export class GuiaService {
   }
 
   getGuiaRapido() {
-    const gr = this.afs.collection('Guias', ref => ref.where('plantao', '==', "true") );
+    const gr = this.afs.collection('Guias', ref => ref.where('ativo', '==', true) );
     return gr.valueChanges();
   }
 

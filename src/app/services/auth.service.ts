@@ -45,17 +45,6 @@ export class AuthService {
     );
   }
 
-  // getGuias(nome:string) {
-  //   return this.userCollection.doc<User>(nome).snapshotChanges().pipe(
-  //     map(actions => {
-  //         const data = actions.payload.data();
-  //         const id = actions.payload.id;
-  //         return { id, ...data };
-       
-  //     })
-  //   );
-  // }
-
   getUser(id: string) {
     return this.userCollection.doc<User>(id).valueChanges();
   }
@@ -63,27 +52,5 @@ export class AuthService {
   updateUser(id: string, user: User) {
     return this.userCollection.doc<User>(id).update(user);
   }
-
-  // deleteProduct(id: string) {
-  //   return this.userCollection.doc(id).delete();
-  // }
   
-  // getGuia(){
-  //   let citiesRef = this.afs.collection('cities');
-  //   let query = citiesRef.where('capital', '==', true).get()
-  //     .then(snapshot => {
-  //       if (snapshot.empty) {
-  //         console.log('No matching documents.');
-  //         return;
-  //       }
-    
-  //       snapshot.forEach(doc => {
-  //         console.log(doc.id, '=>', doc.data());
-  //       });
-  //     })
-  //     .catch(err => {
-  //       console.log('Error getting documents', err);
-  //     });
-
-  // }
 }

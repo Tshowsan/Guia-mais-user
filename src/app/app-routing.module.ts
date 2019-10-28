@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'usuario-cadastrar', loadChildren: './pages/usuario-cadastrar/usuario-cadastrar.module#UsuarioCadastrarPageModule',canActivate:[LoggedGuard] },
   // { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule',canActivate:[AuthGuard] },
   { path: 'details/:id', loadChildren: './pages/details/details.module#DetailsPageModule',canActivate:[AuthGuard] },
-  { path: 'guia-rapido', loadChildren: './pages/guia-rapido/guia-rapido.module#GuiaRapidoPageModule',canActivate:[AuthGuard] }
+  { path: 'guia-rapido', loadChildren: './pages/guia-rapido/guia-rapido.module#GuiaRapidoPageModule',canActivate:[AuthGuard] },
+  { path: 'editar-perfil', loadChildren: './pages/editar-perfil/editar-perfil.module#EditarPerfilPageModule',canActivate:[AuthGuard] }
 ];
 @NgModule({
   imports: [

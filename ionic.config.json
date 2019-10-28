@@ -1,5 +1,7 @@
 {
   "name": "guiaMais",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
