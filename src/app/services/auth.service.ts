@@ -52,5 +52,10 @@ export class AuthService {
   updateUser(id: string, user: User) {
     return this.userCollection.doc<User>(id).update(user);
   }
+
+  forgotPasswordUser(email: string){
+    return this.afa.auth.sendPasswordResetEmail(email);
+
+  }
   
 }
