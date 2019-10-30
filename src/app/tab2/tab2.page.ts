@@ -13,40 +13,18 @@ import { Subscription } from 'rxjs/internal/Subscription';
 })
 export class Tab2Page {
 
-  // private userId: string = null;
-  // private guiaId: string = null;
   public user: User = {};
-  // private loading: any;
   private userSubscription: Subscription;
 
-  // @Input() usuarioDetalharForm: FormGroup;
-
-  // detalharUsuario() {
-  //   this.usuarioDetalharForm = this.formBuilder.group({
-  //     id: [''],
-  //     nome: [''],
-  //     email: [''],
-  //     senha: [''],
-  //     telefone: ['']
-  //   });
-  // }
-
   constructor(
-    // public router: Router,
-    // private activatedRoute: ActivatedRoute,
-    // private formBuilder: FormBuilder,
-    // public loadingController: LoadingController,
     private authService: AuthService
-    //private usuarioService: UsuarioService
   ) {
-    // this.user = this.authService.getAuth().currentUser;
 
     if (this.user) this.loadUser();
   }
 
   ngOnInit() {
-    // this.detalharUsuario();
-    //this.getUsuarioById(1);
+
   }
 
   loadUser() {

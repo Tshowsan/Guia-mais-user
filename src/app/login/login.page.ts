@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { LoadingController, ToastController, AlertController } from '@ionic/angular';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { User } from '../interfaces/user';
 import { Router } from '@angular/router';
 
@@ -21,9 +19,6 @@ export class LoginPage implements OnInit {
     private authService: AuthService,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
-    private afa: AngularFireAuth,
-    private afs: AngularFirestore,
-    private alert: AlertController
     ) { }
 
   ngOnInit() {
@@ -35,7 +30,6 @@ export class LoginPage implements OnInit {
    
     try {
       await this.authService.login(this.user);
-      // console.log("logado com sucesso")
     this.router.navigate(['/tabs/tab1'])
     } catch (error) {
       this.presentToast(error.message);
@@ -58,34 +52,5 @@ export class LoginPage implements OnInit {
     const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
   }
-
-  // forgotpassword(){
-  //   let prompt = this.alert.create({
-
-  //     message:"Uma nova senha sera enviada para o seu email",
-  //     inputs:[
-  //       {
-  //         name:'email',
-  //         placeholder:'seuemail@exemplo.com'
-  //       },
-  //     ],
-  //     buttons:[
-  //       {
-  //         text:'Cancelar',
-  //         handler: data =>{
-  //           console.log('cancelado')
-  //         }
-  //       },
-  //       {
-  //         text:'Submit',
-  //         handler: data =>{
-  //           //call user servide
-  //         } 
-
-  //       }
-  //     ]
-  //   });
-
-  // }
 
 }
