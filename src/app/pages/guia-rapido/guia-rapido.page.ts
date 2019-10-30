@@ -19,8 +19,8 @@ export class GuiaRapidoPage implements OnInit {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController
   ) {
-    this.guiaSubscription = this.guiaService.getGuiaRapido().subscribe(gr => {
-      this.users = gr;
+    this.guiaSubscription = this.guiaService.getGuiaRapido().subscribe(data => {
+      this.users = data;
     });
   }
 

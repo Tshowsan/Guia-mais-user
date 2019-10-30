@@ -2,7 +2,6 @@ import { GuiaService } from './../services/guia.service';
 import { User } from './../interfaces/user';
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../services/auth.service';
 import { LoadingController, ToastController } from '@ionic/angular';
 
 @Component({

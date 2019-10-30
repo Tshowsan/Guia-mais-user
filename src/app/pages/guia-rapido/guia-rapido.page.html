@@ -29,7 +29,7 @@
   
     <ion-list>
       <ion-item-sliding *ngFor="let user of users">
-        <ion-item>
+        <ion-item button [routerLink]="['/details', user.id]">
           <ion-avatar slot="start">
             <img [src]="user.foto">
           </ion-avatar>
