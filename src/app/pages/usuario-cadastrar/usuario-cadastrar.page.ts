@@ -62,9 +62,10 @@ export class UsuarioCadastrarPage implements OnInit {
     try
     {
   const newUser = await this.authService.register(this.user);
-  console.log("Usuario cadastrado com sucesso")
+  // console.log("Usuario cadastrado com sucesso")
+  this.user.foto = "http://4.bp.blogspot.com/_Q8B72nbTfOo/TTEDRegHFLI/AAAAAAAACCw/NXzSKgOv3Y8/s1600/mickey-mouse-for-facebook.jpg";
   await this.afs.collection('Usuarios').doc(newUser.user.uid).set(this.user);
-  console.log("Dados adicionais salvos com sucesso")
+  // console.log("Dados adicionais salvos com sucesso")
   
     }catch (error) {
       console.error(error);

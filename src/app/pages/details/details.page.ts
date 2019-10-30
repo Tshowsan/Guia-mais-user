@@ -1,3 +1,4 @@
+import { Guia } from './../../interfaces/guia';
 import { GuiaService } from './../../services/guia.service';
 import { User } from './../../interfaces/user';
 import { Component, OnInit } from '@angular/core';
@@ -12,9 +13,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsPage implements OnInit {
   private guiaId: string = null;
-  public user: User = {};
+  public guia: Guia = {};
   private loading: any;
-  private userSubscription: Subscription;
+  private guiaSubscription: Subscription;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -33,12 +34,12 @@ export class DetailsPage implements OnInit {
   }
 
   ngOnDestroy() {
-    if (this.userSubscription) this.userSubscription.unsubscribe();
+    if (this.guiaSubscription) this.guiaSubscription.unsubscribe();
   }
 
   loadGuia() {
-    this.userSubscription = this.guiaService.getGuia(this.guiaId).subscribe(data => {
-      this.user = data;
+    this.guiaSubscription = this.guiaService.getGuia(this.guiaId).subscribe(data => {
+      this.guia = data;
     });
   }
 

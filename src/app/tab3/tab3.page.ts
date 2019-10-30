@@ -3,6 +3,7 @@ import { User } from './../interfaces/user';
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoadingController, ToastController } from '@ionic/angular';
+import { Guia } from '../interfaces/guia';
 
 @Component({
   selector: 'app-tab3',
@@ -11,23 +12,23 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 export class Tab3Page {
   private loading: any;
-  public users = new Array<User>();
-  private userSubscription: Subscription;
+  public guias = new Array<Guia>();
+  private guiaSubscription: Subscription;
 
   constructor(
     private guiaService: GuiaService,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController
   ) {
-    this.userSubscription = this.guiaService.getGuias().subscribe(data => {
-      this.users = data;
+    this.guiaSubscription = this.guiaService.getGuiaAtivo().subscribe(data => {
+      this.guias = data;
     });
   }
 
   ngOnInit() { }
 
   ngOnDestroy() {
-    this.userSubscription.unsubscribe();
+    this.guiaSubscription.unsubscribe();
   }
 
   async presentLoading() {

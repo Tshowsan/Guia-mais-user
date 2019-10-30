@@ -27,6 +27,10 @@ export class Tab2Page {
 
   }
 
+  ngOnDestroy() {
+    this.userSubscription.unsubscribe();
+  }
+
   loadUser() {
     this.userSubscription = this.authService.getUser(this.authService.getAuth().currentUser.uid).subscribe(data => {
       this.user = data;
