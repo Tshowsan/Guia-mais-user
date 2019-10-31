@@ -55,7 +55,10 @@ export class AuthService {
 
   forgotPasswordUser(email: string){
     return this.afa.auth.sendPasswordResetEmail(email);
+  }
 
+  updatePassword(newpassword: string){
+    return this.afa.auth.currentUser.updatePassword(newpassword);
   }
   
 }

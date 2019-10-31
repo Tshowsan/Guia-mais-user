@@ -84,9 +84,19 @@ export class UsuarioCadastrarPage implements OnInit {
       }
       this.presentToast(message);
   }finally {
+    this.logar();
     this.loading.dismiss();
+    
   }
 }
+
+async logar(){
+  try {
+    await this.authService.login(this.user);
+  } catch (error) {
+    this.presentToast(error.message);
+  }
+}  
 
   // limpar() {
   //   this.usuarioCadastrarForm.reset();

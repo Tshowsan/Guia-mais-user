@@ -28,7 +28,7 @@ export class Tab2Page {
   }
 
   ngOnDestroy() {
-    this.userSubscription.unsubscribe();
+    if (this.userSubscription) this.userSubscription.unsubscribe();
   }
 
   loadUser() {

@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'details/:id', loadChildren: './pages/details/details.module#DetailsPageModule',canActivate:[AuthGuard] },
   { path: 'guia-rapido', loadChildren: './pages/guia-rapido/guia-rapido.module#GuiaRapidoPageModule',canActivate:[AuthGuard] },
   { path: 'editar-perfil', loadChildren: './pages/editar-perfil/editar-perfil.module#EditarPerfilPageModule',canActivate:[AuthGuard] },
-  { path: 'reset-password', loadChildren: './pages/reset-password/reset-password.module#ResetPasswordPageModule' }
+  { path: 'reset-password', loadChildren: './pages/reset-password/reset-password.module#ResetPasswordPageModule',canActivate:[LoggedGuard] },
+  { path: 'change-password', loadChildren: './pages/change-password/change-password.module#ChangePasswordPageModule',canActivate:[AuthGuard] }
 ];
 @NgModule({
   imports: [

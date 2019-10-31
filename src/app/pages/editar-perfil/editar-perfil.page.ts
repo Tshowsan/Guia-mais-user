@@ -27,6 +27,10 @@ export class EditarPerfilPage implements OnInit {
 
   }
 
+  ngOnDestroy() {
+    this.userSubscription.unsubscribe();
+  }
+
   loadUser() {
     this.userSubscription = this.authService.getUser(this.authService.getAuth().currentUser.uid).subscribe(data => {
       this.user = data;
