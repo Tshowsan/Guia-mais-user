@@ -1,17 +1,18 @@
-<h3>Average Rating</h3>
+<ion-card>
+<h3>Média das Avaliações</h3>
 
 {{ avgRating | async }}
 
 
-<h3>Reviews</h3>
+<h3>Avaliações</h3>
 <div *ngFor="let star of stars | async">
 
-  {{ star.userId }} gave {{ star.guiaId }} {{ star.value }} stars
+  "{{ star.userName }}" deu a "{{ star.guiaName }}" {{ star.value }} estrelas.
 
 </div>
 
 
-<h3>Post your Review</h3>
+<h3>Deixe sua Avaliação</h3>
 
 <fieldset class="rating">
   <ng-container  *ngFor="let num of [5, 4, 3, 2, 1]">
@@ -20,7 +21,7 @@
             [id]="'star'+num"
             [value]="num-0.5"
             name="rating" 
-            type="radio" />
+            type="radio"/>
 
       <label class="full" [for]="'star'+num"></label>
 
@@ -29,9 +30,11 @@
              [value]="num-0.5"
              [id]="'halfstar'+num" 
              name="rating" 
-             type="radio"  />
+             type="radio"/>
 
       <label class="half" [for]="'halfstar'+num"></label>
 
   </ng-container>
 </fieldset>
+
+</ion-card>

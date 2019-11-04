@@ -40,6 +40,10 @@ export class Tab1Page {
     this.router.navigate(['/guia-rapido'])
   }
 
+  async meusFavoritos(){
+    this.router.navigate(['/meus-favoritos'])
+  }
+
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();

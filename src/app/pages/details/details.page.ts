@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-details',
@@ -13,8 +14,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsPage implements OnInit {
   private guiaId: string = null;
+  private userId: string = null;
   public guia: Guia = {};
+  public user: User = {};
   private loading: any;
+  private userSubscription: Subscription;
   private guiaSubscription: Subscription;
 
   constructor(
@@ -22,11 +26,14 @@ export class DetailsPage implements OnInit {
     private loadingCtrl: LoadingController,
     private guiaService: GuiaService,
     private toastCtrl: ToastController,
+    private authService: AuthService
   ){
     
     this.guiaId = this.activatedRoute.snapshot.params['id'];
+    this.userId = this.authService.getAuth().currentUser.uid;
 
     if (this.guiaId) this.loadGuia();
+    if (this.userId) this.loadUser();
   }
 
   ngOnInit() { 
@@ -35,6 +42,7 @@ export class DetailsPage implements OnInit {
 
   ngOnDestroy() {
     if (this.guiaSubscription) this.guiaSubscription.unsubscribe();
+    if (this.userSubscription) this.userSubscription.unsubscribe();
   }
 
   loadGuia() {
@@ -42,6 +50,13 @@ export class DetailsPage implements OnInit {
       this.guia = data;
     });
   }
+
+  loadUser() {
+    this.userSubscription = this.authService.getUser(this.authService.getAuth().currentUser.uid).subscribe(data => {
+      this.user = data;
+    });
+  }
+
 
   async presentLoading() {
     this.loading = await this.loadingCtrl.create({ message: 'Aguarde...' });

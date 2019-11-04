@@ -5,11 +5,15 @@ import { Observable } from 'rxjs/Observable';
 export interface Star {
   userId: any;
   guiaId: any;
+  userName:string;
+  guiaName:string;
   value: number;
 }
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class StarService {
 
   constructor(private afs: AngularFirestore) { }
@@ -20,16 +24,16 @@ export class StarService {
     return starsRef.valueChanges();
   }
 
-  // Get all stars that belog to a Movie
+  // Get all stars that belog to a Guia
   getGuiaStars(guiaId) {
-    const starsRef = this.afs.collection('stars', ref => ref.where('movieId', '==', guiaId) );
+    const starsRef = this.afs.collection('stars', ref => ref.where('guiaId', '==', guiaId) );
     return starsRef.valueChanges();
   }
 
   // Create or update star
-  setStar(userId, guiaId, value) {
+  setStar(userId, userName, guiaId, guiaName, value) {
     // Star document data
-    const star: Star = { userId, guiaId, value };
+    const star: Star = { userId, userName, guiaId, guiaName, value};
 
     // Custom doc ID for relationship
     const starPath = `stars/${star.userId}_${star.guiaId}`;

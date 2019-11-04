@@ -13,6 +13,8 @@ export class StarReviewComponent implements OnInit {
  
   @Input() userId;
   @Input() guiaId;
+  @Input() userName;
+  @Input() guiaName;
 
   stars: Observable<any>;
   avgRating: Observable<any>;
@@ -29,7 +31,7 @@ export class StarReviewComponent implements OnInit {
   }
 
   starHandler(value) {
-    this.starService.setStar(this.userId, this.guiaId, value)
+    this.starService.setStar(this.userId, this.userName, this.guiaId, this.guiaName, value)
   }
 
 

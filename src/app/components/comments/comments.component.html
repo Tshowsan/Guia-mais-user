@@ -1,0 +1,21 @@
+<ion-card>
+<h3>Deixe seu Comentario</h3>
+
+<ion-textarea type="text" [(ngModel)]="text"></ion-textarea>
+
+<ion-button type="button" (click)="commentHandler(text)" shape="round" expand="full" color="warning" >
+  Enviar
+</ion-button>
+
+<h3>Comentarios dos usuarios</h3>
+
+<ion-item *ngFor="let comment of comments | async">
+    <ion-avatar slot="start">
+        <img [src]="comment.userFoto">
+      </ion-avatar>
+"{{ comment.userName }}" comentou para "{{ comment.guiaName }}" {{ comment.text }}
+
+</ion-item>
+
+</ion-card>
+

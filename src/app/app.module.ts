@@ -1,3 +1,4 @@
+import { ShareModule } from './share.module';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { NgModule } from '@angular/core';
@@ -29,7 +30,8 @@ import { BrMaskerModule } from 'br-mask';
     AngularFireDatabaseModule ,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    BrMaskerModule
+    BrMaskerModule,
+    ShareModule
   ],
   
   providers: [

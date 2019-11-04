@@ -1,4 +1,3 @@
-import { ShareModule } from './../../share.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DetailsPage } from './details.page';
+import { MeusFavoritosPage } from './meus-favoritos.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: DetailsPage
+    component: MeusFavoritosPage
   }
 ];
 
@@ -20,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    ShareModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [DetailsPage]
+  declarations: [MeusFavoritosPage]
 })
-export class DetailsPageModule {}
+export class MeusFavoritosPageModule {}
