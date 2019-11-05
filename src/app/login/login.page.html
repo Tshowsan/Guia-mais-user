@@ -1,37 +1,42 @@
-<ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title> Login </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-card class="card-login">
 
-    <ion-card class="card-form">
+  <!-- <ion-card class="card-login"> -->
 
-      <ion-item id="rounded">
-        <ion-label position="floating">E-mail</ion-label>
-        <ion-input type="text" value="" [(ngModel)]="user.email"></ion-input>
+    <ion-card class="card-form ion-padding">
+
+      <span><p>Login</p></span>
+
+      <ion-item class="ion-margin-top" lines="none">
+        <ion-icon name="mail" slot="end"></ion-icon>
+        <ion-input type="text" placeholder="E-mail" value="" [(ngModel)]="user.email"></ion-input>
       </ion-item>
 
-      <ion-item id="rounded">
-        <ion-label position="floating">Senha</ion-label>
-        <ion-input type="password" value="" [(ngModel)]="user.password"></ion-input>
+      <ion-item class="ion-margin-top" lines="none">
+        <ion-icon name="key" slot="end"></ion-icon>
+        <ion-input type="password"  placeholder="Senha" value="" [(ngModel)]="user.password"></ion-input>
       </ion-item>  
 
+      <div id="opcao">
+        <ion-label>Memorizar senha</ion-label>
+        <ion-toggle color="primary" mode="md"></ion-toggle>
+      </div>
 
-      <ion-button class="button" type="button" (click)="logar()"  shape="round" expand="full" color="primary">
+      <ion-button class="ion-margin-top" (click)="logar()" color="light" expand="block">
           Entrar
       </ion-button>
 
-      <ion-button  type="button" (click)="cadastrar()" shape="round" expand="full" color="warning">
-          Cadastrar
+      <ion-button class="ion-margin-top" (click)="cadastrar()" expand="block" color="light">
+          Cadastre-se
       </ion-button>
 
-      <ion-button expand="block" fill="clear" [routerLink]="['/reset-password']"> Esqueceu sua senha?</ion-button>
-    
+      <ion-button id="button-text" expand="block" fill="clear" [routerLink]="['/reset-password']">
+        <p>Esqueceu sua senha?</p>
+      </ion-button>
+      
+      
     </ion-card>
     
-  </ion-card>
+<!--   </ion-card> -->
+
 </ion-content>
 

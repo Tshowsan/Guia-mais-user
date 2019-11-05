@@ -1,58 +1,121 @@
-.card-login {
-    background-repeat: no-repeat;
+/* .card-login {
     background-size: cover;
     background-position: center;
+    background: -webkit-linear-gradient(to top, royalblue, white);
+    background: -o-linear-gradient(to top, royalblue, white);
+    background: -moz-linear-gradient(to top, royalblue, white);
+    background: linear-gradient(to top, royalblue, white); 
+    background: #f2f2f2;
     width: 80%;
-    height: 80%;
-    margin: auto;
+    height: 75%;
+    margin: 0 auto;
     margin-top: 5%;
-    z-index: 2;
-    position: inherit;
-    background-image: url('/assets/images/logo.png');
-    opacity: 0.7;
-}
+    z-index: 1;
+    position: relative;
+    box-shadow: 5px 5px 0 #d9d9d9;
+   -webkit-box-shadow: 5px 5px 0 #d9d9d9;
+   -moz-box-shadow: 5px 5px 0 #d9d9d9;
+    
+}  */
 
 .card-form {
-    padding: 2% 4%;
-    width: 50%;
-    height: 50%;
-    margin: auto;
-    position: fixed;
-    margin-left: 15%;
-    margin-right: 10%;
-    margin-top: 5%;
-}
-
-.login-form {
-    padding: 2% 3%;
-    /* text-align: center;
-    color: white; */
-}
-
-#rounded {
-    width: 100%;
-    height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 10px;
-    margin-bottom: 10px;  
-    opacity: 0.5;
-    margin: 0%;
-}
-
-#container {
-    width: 300px; 
-    margin-left:auto; 
-    margin-right: auto; 
-} 
-
-#titulo {
-    text-align: center;
-    color: white;
-    font-size: 24px;
-}
-
-.button {
-    margin-bottom: 1%;
-    position: relative;
-}
+    /* padding: 4% 5%;
+     margin-top: 5%;
+     width: 75%;
+     height: 75%;
+     margin: 0 auto;
+     position: relative;
+     background-color: white;
+     margin-left: 15%;
+     margin-right: 10%;
+     margin-top: 2%;
+     border: 15%; */
+ 
+     color: #fff;
+     background-color: #4169e1;
+     background-position: center;
+     background: -webkit-linear-gradient(to medium, royalblue, white);
+     background: -o-linear-gradient(to medium, royalblue, white);
+     background: -moz-linear-gradient(to medium, royalblue, white);
+     background: linear-gradient(to medium, royalblue, white);
+     border-radius: 10px;
+ 
+     position: relative;
+     left: 0;
+     right: 0;
+     width: 65%;
+     margin: 0 auto;
+     margin-top: 5%;
+     z-index: 2;
+     box-shadow: 5px 5px 0 #d9d9d9;
+     -webkit-box-shadow: 5px 5px 0 #d9d9d9;
+     -moz-box-shadow: 5px 5px 0 #d9d9d9;
+ 
+     &.top {
+         top: 5%;
+     }
+ 
+     &.botton {
+         bottom: 30%;
+     }
+ } 
+ 
+ span p{
+     color: #fff;
+     text-align: center;
+     font-size: 24px;
+     font-weight: bold;
+ }
+ 
+    /*  width: 100%;
+     border: none; 
+     border-bottom-color: #4169e1;
+     border-bottom-style: solid;
+     outline: none;
+     margin-bottom: 30px; */
+ 
+ ion-item {
+     --background: rgba(255, 255, 255, 0.2);
+     --border-radius: 10px;
+ 
+     ion-input {
+         --color: #fff;
+     }
+ }
+ 
+ ion-icon {
+     color: #fff;
+ }
+ 
+ #opcao {
+     color: #ffffff;
+     text-align: end;
+     margin-right: 10px;
+ }
+ 
+ /* #titulo {
+     text-shadow: darkgray;
+     color: #4169e1;
+     font-size: 24px;
+     font-weight: bold;
+     margin: auto;
+ } */
+ 
+ /* #titulo h2{
+     text-shadow: darkgray;
+     text-align: center;
+     font-size: 36px;
+     font-weight: bold;
+     margin-top: 10px;
+     margin-bottom: 3px;
+ } */
+ 
+ 
+ /* .button {
+     position: relative;
+ } */
+ 
+ #button-text p {
+     position: relative;
+     color: #ffffff;
+ }
