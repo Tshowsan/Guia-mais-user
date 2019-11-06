@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Meus Dados </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="card-form">
+
+    <ion-list padding>
+
+        <ion-avatar slot="start">
+          <img [src]="user.foto">
+        </ion-avatar>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" [(ngModel)]="user.email" disabled="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="user.nome" disabled="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Telefone</ion-label>
+        <ion-input type="string" [(ngModel)]="user.telefone" disabled="true"></ion-input>
+      </ion-item>
+          
+      <!-- <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="string" [(ngModel)]="user.password" disabled="true"></ion-input>
+      </ion-item>
+   -->
+    </ion-list>
+
+    <ion-button  shape="round" expand="expand" color="success" [routerLink]="['/editar-perfil']">
+        Editar Perfil
+    </ion-button>
+
+    <ion-button  shape="round" expand="expand" color="success" [routerLink]="['/change-password']">
+      Alterar Senha
+    </ion-button>
+      
+  </ion-card>
+
+</ion-content>
+

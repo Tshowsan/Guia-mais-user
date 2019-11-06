@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, ToastController, PopoverController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { SettingsComponent } from '../components/settings/settings.component';
 
 @Component({
   selector: 'app-tab1',
@@ -16,7 +17,8 @@ export class Tab1Page {
     public router: Router,
     private authService: AuthService,
     private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private popoverCtrl: PopoverController
   ) {}
 
   async logout() {
@@ -40,12 +42,23 @@ export class Tab1Page {
     this.router.navigate(['/guia-rapido'])
   }
 
-  async meusFavoritos(){
-    this.router.navigate(['/meus-favoritos'])
-  }
-
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
   }
+
+  async mostrarOpcoes(ev: any) {
+    const popover = await this.popoverCtrl.create({
+      component: SettingsComponent,
+      event: ev,
+      animated: true,
+      mode: 'ios',
+      showBackdrop: true
+    });
+
+      return await popover.present();
+
+  }
+
+
 }

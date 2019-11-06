@@ -1,13 +1,16 @@
 <ion-header>
-    <ion-toolbar color="secondary">
-      <ion-title> Guia Rapido </ion-title>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Guia Rapido </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
   
-  <ion-content>
+<ion-content>
+
+  <ion-card class="card-list">
+
     <ion-list *ngIf="!users.length">
       <ion-item *ngFor="let item of [0, 1, 2]">
         <ion-avatar slot="start">
@@ -26,14 +29,14 @@
         </ion-label>
       </ion-item>
     </ion-list>
-  
+
     <ion-list>
       <ion-item-sliding *ngFor="let user of users">
-        <ion-item button [routerLink]="['/details', user.id]">
+        <ion-item lines="none" button [routerLink]="['/details', user.id]">
           <ion-avatar slot="start">
             <img [src]="user.foto">
           </ion-avatar>
-  
+
           <ion-label>
             {{ user.nome }}
             <p>{{ user.email }}</p>
@@ -54,7 +57,7 @@
           </fieldset> -->
 
         </ion-item>
-  
+
         <ion-item-options side="end">
           <ion-item-option color="danger" (click)="deleteProduct(product.id)">
             <ion-icon slot="top" name="trash"></ion-icon>
@@ -63,4 +66,11 @@
         </ion-item-options>
       </ion-item-sliding>
     </ion-list>
-  </ion-content>
+
+    <div class="footer-bottom">
+      <h6>Guia+ 2019. Versão 1.0.0.</h6>
+    </div>
+
+  </ion-card>
+
+</ion-content>

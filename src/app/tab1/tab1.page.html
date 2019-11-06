@@ -1,30 +1,63 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title> Home </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title> Bem vindo ao Guia+</ion-title>
+    <ion-button class="opcoes" fill="clear" slot="end" (click)="mostrarOpcoes($event)">
+      <ion-icon name="person" color="light"></ion-icon>
+      <ion-icon name="arrow-dropdown" color="light"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="welcome">
+<ion-content fullscreen padding scroll-y="false" class="welcome">
 
-    <ion-card-header>
-      <ion-card-title><h1>Bem vindo ao seu aplicativo de turismo!!</h1></ion-card-title>
-    </ion-card-header> 
-    <ion-card-content>
-      <div class="img">
-        <img src="/assets/images/logo.png" alt=""/>
-      </div>
-      <ion-button (click)="logout()" color="danger" expand="block">
-        Sair
-      </ion-button>
-      <ion-button (click)="guiaRapido()" color="danger" expand="block">
-          Guia Rapido
-        </ion-button>
-        <ion-button (click)="meusFavoritos()" color="danger" expand="block">
-            Meus Favoritos
-          </ion-button>
-      <div class="footer-bottom">
-        <h6>Copyright© GuiaMais 2019. Todos os direitos reservados.</h6>
-      </div>
-    </ion-card-content>
+  <ion-slides class="slides-itens" pager="true">
 
+    <ion-slide>
+      <div class="img-content-1">
+        <img class="img-1" src="../../assets/images/logo-oficial.jpg" alt="logo-oficial">
+      </div>
+      <div class="text-content">
+        <p>O Guia+ é o aplicativo ideal para suas viagens!!
+         Onde você pode encontar Guias turísticos para acompanhar e tornar seus passeios 
+         mais proveitosos e torná-los uma experiência única!!</p>
+      </div>
+      
+    </ion-slide>
+
+    <ion-slide>
+        <div class="img-content">
+          <img src="../../assets/images/guia de turismo.jpg" alt="guia de turismo">
+        </div>
+        <div class="text-content">
+          <p>Aqui você encontra uma lista de profissionais de turísmo cadastrados e certificados 
+           onde você poderá entrar em contato e contratar seus serviços!
+        </p>
+        </div>
+        
+    </ion-slide>
+
+    <ion-slide>
+        <div class="img-content-3">
+          <img class="img-3" src="../../assets/images/autoavaliacao.jpg" alt="autoavaliacao">
+        </div>
+        <div class="text-content">
+          <p>Você também poderá avaliar o serviço prestado e favoritar o profissional que escolher com base nas avaliações.</p>
+        </div>
+        
+    </ion-slide>
+
+  </ion-slides>
+
+  <!-- <ion-button (click)="logout()"  expand="block">
+    Sair
+  </ion-button> -->
+  <!-- <ion-button (click)="guiaRapido()"  expand="block">
+    Guia Rapido
+  </ion-button> -->
+
+  <!-- <div class="footer-bottom">
+    <h6>GuiaMais 2019. Todos os direitos reservados.</h6>
+  </div>
+ -->
 </ion-content>
+

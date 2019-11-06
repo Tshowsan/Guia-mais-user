@@ -17,11 +17,12 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrMaskerModule } from 'br-mask';
+import { SettingsComponent } from './components/settings/settings.component';
 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent,SettingsComponent],
+  entryComponents: [SettingsComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
