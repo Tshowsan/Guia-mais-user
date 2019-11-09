@@ -36,7 +36,7 @@
 
       <ion-item class="ion-margin-top" lines="none">
         <ion-icon name="call" slot="end"></ion-icon>
-        <ion-input type="phone" placeholder="Telefone" formControlName="telefone" [(ngModel)]="user.telefone"></ion-input>
+        <ion-input type="number" placeholder="Telefone" formControlName="telefone" [(ngModel)]="user.telefone"></ion-input>
         <div class="errors" *ngIf="usuarioCadastrarForm.controls.telefone.errors">
           <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.required"></h6>
           <!-- <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.pattern">Telefone inválido</h6> -->
@@ -57,9 +57,9 @@
           Cadastrar
       </ion-button>
 
-      <ion-button class="ion-margin-top" expand="block" color="light" (click)="limpar()">
+      <!-- <ion-button class="ion-margin-top" expand="block" color="light" (click)="limpar()">
           Cancelar
-      </ion-button>
+      </ion-button> -->
 
     </ion-card>
 

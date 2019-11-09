@@ -29,6 +29,7 @@ export class Tab3Page {
 
   ngOnDestroy() {
     this.guiaSubscription.unsubscribe();
+    this.limpar();
   }
 
   async presentLoading() {
@@ -39,6 +40,10 @@ export class Tab3Page {
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
+  }
+
+  limpar(){
+    this.guias = null;
   }
   
 }

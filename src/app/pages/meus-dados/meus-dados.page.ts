@@ -24,12 +24,17 @@ export class MeusDadosPage implements OnInit {
 
   ngOnDestroy() {
     if (this.userSubscription) this.userSubscription.unsubscribe();
+    this.limpar();
   }
 
   loadUser() {
     this.userSubscription = this.authService.getUser(this.authService.getAuth().currentUser.uid).subscribe(data => {
       this.user = data;
     });
+  }
+
+  limpar(){
+    this.user = null;
   }
 
 

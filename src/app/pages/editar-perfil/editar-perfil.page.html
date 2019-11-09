@@ -10,26 +10,39 @@
 
 <ion-content>
 
+  <form [formGroup]="usuarioEditarForm">
+
 <ion-card>
 
     <ion-list padding>
 
       <ion-item id="rounded">
         <ion-label position="floating">Nome</ion-label>
-        <ion-input type="text" [(ngModel)]="user.nome"></ion-input>
+        <ion-input type="text" formControlName="nome" [(ngModel)]="user.nome"></ion-input>
+        <div class="errors" *ngIf="usuarioEditarForm.controls.nome.errors">
+          <h6 *ngIf="usuarioEditarForm.controls.nome.errors.required"></h6>
+          <h6 *ngIf="usuarioEditarForm.controls.nome.errors.minlength">O Nome deve conter no minimo 2 caracteres</h6>
+          <h6 *ngIf="usuarioEditarForm.controls.nome.errors.maxlength">O Nome deve conter no maximo 50 caracteres</h6>
+        </div>
       </ion-item>
 
       <ion-item id="rounded">
         <ion-label position="floating">Telefone</ion-label>
-        <ion-input type="string" [(ngModel)]="user.telefone"></ion-input>
+        <ion-input type="string" formControlName="telefone" [(ngModel)]="user.telefone"></ion-input>
+        <div class="errors" *ngIf="usuarioEditarForm.controls.telefone.errors">
+          <h6 *ngIf="usuarioEditarForm.controls.telefone.errors.required"></h6>
+          <!-- <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.pattern">Telefone inválido</h6> -->
+        </div>
       </ion-item>
 
-      <ion-button  (click)="updateUser()" shape="round" expand="expand" color="success" [routerLink]="['/tabs/tab2']">
+      <ion-button  (click)="updateUser()" shape="round" expand="expand" color="success" [routerLink]="['/meus-dados']">
         Alterar
     </ion-button>
 
     </ion-list>
 
 </ion-card>
+
+</form>
 
 </ion-content>

@@ -24,6 +24,10 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  ngOnDestroy() {
+    this.limpar();
+  }
+
 
   async logar(){
     await this.presentLoading();
@@ -32,7 +36,21 @@ export class LoginPage implements OnInit {
       await this.authService.login(this.user);
     this.router.navigate(['/tabs/tab1'])
     } catch (error) {
-      this.presentToast(error.message);
+      console.log(error);
+      let message: string;
+      switch(error.code){
+        case 'auth/argument-error':
+          message = 'e-mail ou senha invalidos';
+          break;
+          case 'auth/wrong-password':
+              message = 'Senha incorreta';
+              break;
+              case 'auth/user-not-found':
+                message = 'e-mail não cadastrado';
+                break;
+              
+      }
+      this.presentToast(message);
     } finally {
       this.loading.dismiss();
     }
@@ -51,6 +69,10 @@ export class LoginPage implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
+  }
+
+  limpar() {
+    this.user = null;
   }
 
 }

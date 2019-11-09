@@ -11,7 +11,7 @@
 
   <ion-card class="card-list">
 
-    <ion-list *ngIf="!users.length">
+    <ion-list *ngIf="!guias.length">
       <ion-item *ngFor="let item of [0, 1, 2]">
         <ion-avatar slot="start">
           <ion-skeleton-text animated></ion-skeleton-text>
@@ -31,16 +31,16 @@
     </ion-list>
 
     <ion-list>
-      <ion-item-sliding *ngFor="let user of users">
-        <ion-item lines="none" button [routerLink]="['/details', user.id]">
+      <ion-item-sliding *ngFor="let guia of guias">
+        <ion-item lines="none" button [routerLink]="['/details', guia.id]">
           <ion-avatar slot="start">
-            <img [src]="user.foto">
+            <img [src]="guia.foto">
           </ion-avatar>
 
           <ion-label>
-            {{ user.nome }}
-            <p>{{ user.email }}</p>
-            <p>{{ user.telefone }}</p>
+            {{ guia.nome }}
+            <p>{{ guia.email }}</p>
+            <p>{{ guia.telefone }}</p>
             <!-- <p>{{ product.createdAt | date: 'short' }}</p> -->
           </ion-label>
           <!-- <fieldset class="rating">
@@ -58,12 +58,12 @@
 
         </ion-item>
 
-        <ion-item-options side="end">
+        <!-- <ion-item-options side="end">
           <ion-item-option color="danger" (click)="deleteProduct(product.id)">
             <ion-icon slot="top" name="trash"></ion-icon>
             Excluir
           </ion-item-option>
-        </ion-item-options>
+        </ion-item-options> -->
       </ion-item-sliding>
     </ion-list>
 

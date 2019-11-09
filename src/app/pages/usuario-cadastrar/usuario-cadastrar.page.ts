@@ -56,6 +56,10 @@ export class UsuarioCadastrarPage implements OnInit {
   ngOnInit() {
     
   }
+  
+  ngOnDestroy() {
+    this.limpar;
+  }
 
   async register(){
     await this.presentLoading();
@@ -75,7 +79,7 @@ export class UsuarioCadastrarPage implements OnInit {
           message = 'e-mail já cadastrado';
           break;
           case 'auth/invalid-email':
-              message = 'informe um e-mail  valido';
+              message = 'informe um e-mail valido';
               break;
               case 'auth/argument-error':
                 message = 'informe um e-mail';
@@ -98,9 +102,9 @@ async logar(){
   }
 }  
 
-  // limpar() {
-  //   this.usuarioCadastrarForm.reset();
-  // }
+  limpar() {
+    this.usuarioCadastrarForm.reset();
+  }
 
   async presentLoading() {
     this.loading = await this.loadingCtrl.create({ message: 'Aguarde...' });

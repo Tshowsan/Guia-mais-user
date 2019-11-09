@@ -31,23 +31,25 @@
         <ion-label position="floating">Telefone</ion-label>
         <ion-input type="string" [(ngModel)]="user.telefone" disabled="true"></ion-input>
       </ion-item>
-          
+
       <!-- <ion-item>
         <ion-label position="floating">Senha</ion-label>
         <ion-input type="string" [(ngModel)]="user.password" disabled="true"></ion-input>
       </ion-item>
    -->
     </ion-list>
-
-    <ion-button  shape="round" expand="expand" color="success" [routerLink]="['/editar-perfil']">
-        Editar Perfil
-    </ion-button>
-
-    <ion-button  shape="round" expand="expand" color="success" [routerLink]="['/change-password']">
+    <!-- <ion-button  shape="round" expand="expand" color="success" [routerLink]="['/change-password']">
       Alterar Senha
-    </ion-button>
+    </ion-button> -->
       
   </ion-card>
 
 </ion-content>
+
+<ion-footer>
+      <ion-button  shape="round" expand="expand" color="success" [routerLink]="['/editar-perfil']">
+        Editar Perfil
+    </ion-button>
+
+</ion-footer>
 

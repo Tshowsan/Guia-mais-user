@@ -3,6 +3,7 @@ import { User } from 'src/app/interfaces/user';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { GuiaService } from 'src/app/services/guia.service';
 import { LoadingController, ToastController } from '@ionic/angular';
+import { Guia } from 'src/app/interfaces/guia';
 
 @Component({
   selector: 'app-guia-rapido',
@@ -11,7 +12,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 export class GuiaRapidoPage implements OnInit {
   private loading: any;
-  public users = new Array<User>();
+  public guias = new Array<Guia>();
   private guiaSubscription: Subscription;
 
   constructor(
@@ -20,7 +21,7 @@ export class GuiaRapidoPage implements OnInit {
     private toastCtrl: ToastController
   ) {
     this.guiaSubscription = this.guiaService.getGuiaRapido().subscribe(data => {
-      this.users = data;
+      this.guias = data;
     });
   }
 
@@ -28,6 +29,7 @@ export class GuiaRapidoPage implements OnInit {
 
   ngOnDestroy() {
     this.guiaSubscription.unsubscribe();
+    this.limpar();
   }
 
   async presentLoading() {
@@ -38,5 +40,9 @@ export class GuiaRapidoPage implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
+  }
+
+  limpar(){
+    this.guias = null;
   }
 }
