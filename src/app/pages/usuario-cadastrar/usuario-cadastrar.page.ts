@@ -58,7 +58,7 @@ export class UsuarioCadastrarPage implements OnInit {
   }
   
   ngOnDestroy() {
-    this.limpar;
+    this.limpar();
   }
 
   async register(){
