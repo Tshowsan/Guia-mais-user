@@ -1,4 +1,10 @@
-<ion-card>
-<h3> Add aos favoritos </h3>
-<ion-toggle [(ngModel)]="control"  (click)="favoriteHandler(control)"></ion-toggle>
-</ion-card>
+<div>
+    <ion-row>
+        <ion-col size="6">
+            <h3>Add aos favoritos</h3>
+        </ion-col>
+        <ion-col size="6">
+            <ion-toggle [(ngModel)]="control"  (click)="favoriteHandler(control)"></ion-toggle>
+        </ion-col>
+    </ion-row>    
+</div>

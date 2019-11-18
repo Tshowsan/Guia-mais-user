@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="topo" color="custom-color">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button color="light" defaultHref="/meus-dados"></ion-back-button>
     </ion-buttons>
 
     <ion-title>Editar perfil</ion-title>
@@ -12,37 +12,47 @@
 
   <form [formGroup]="usuarioEditarForm">
 
-<ion-card>
+    <ion-card class="card-form">
 
-    <ion-list padding>
+      <div>
+        <img src="../../../assets/images/img-perfil.png">
+        <ion-label>Alterar foto</ion-label>
+      </div>
 
-      <ion-item id="rounded">
-        <ion-label position="floating">Nome</ion-label>
-        <ion-input type="text" formControlName="nome" [(ngModel)]="user.nome"></ion-input>
+      <ion-list>
+
+        <ion-item lines="none">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input type="text" formControlName="nome" [(ngModel)]="user.nome"></ion-input>
+        </ion-item>
         <div class="errors" *ngIf="usuarioEditarForm.controls.nome.errors">
           <h6 *ngIf="usuarioEditarForm.controls.nome.errors.required"></h6>
           <h6 *ngIf="usuarioEditarForm.controls.nome.errors.minlength">O Nome deve conter no minimo 2 caracteres</h6>
           <h6 *ngIf="usuarioEditarForm.controls.nome.errors.maxlength">O Nome deve conter no maximo 50 caracteres</h6>
         </div>
-      </ion-item>
 
-      <ion-item id="rounded">
-        <ion-label position="floating">Telefone</ion-label>
-        <ion-input type="string" formControlName="telefone" [(ngModel)]="user.telefone"></ion-input>
+        <ion-item lines="none">
+          <ion-label position="floating">Telefone</ion-label>
+          <ion-input type="string" formControlName="telefone" [(ngModel)]="user.telefone"></ion-input>
+        </ion-item>
         <div class="errors" *ngIf="usuarioEditarForm.controls.telefone.errors">
           <h6 *ngIf="usuarioEditarForm.controls.telefone.errors.required"></h6>
           <!-- <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.pattern">Telefone inválido</h6> -->
         </div>
-      </ion-item>
 
-      <ion-button  (click)="updateUser()" shape="round" expand="expand" color="success" [routerLink]="['/meus-dados']">
-        Alterar
-    </ion-button>
+      </ion-list>
 
-    </ion-list>
+      <ion-button class="btn" (click)="updateUser()"  expand="block" [routerLink]="['/meus-dados']">
+        Atualizar dados
+      </ion-button>
 
-</ion-card>
+      <div class="footer">
+        <p id="p1">Guia+ 2019. Todos os direitos reservados.</p>
+        <p id="p2">Versão 1.0.0.</p>
+      </div>
 
-</form>
+    </ion-card>
+
+  </form>
 
 </ion-content>

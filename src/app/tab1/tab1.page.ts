@@ -39,7 +39,7 @@ export class Tab1Page {
   }
 
   async guiaRapido(){
-    this.router.navigate(['/guia-rapido'])
+    this.router.navigate(['/guia-rapido']);
   }
 
   async presentToast(message: string) {
