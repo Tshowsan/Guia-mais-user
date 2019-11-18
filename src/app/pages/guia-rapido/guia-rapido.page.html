@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar class="topo" color="custom-color">
     <ion-title> Guia Rapido </ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+      <ion-back-button color="light" defaultHref="/tabs/tab1"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -31,8 +31,8 @@
     </ion-list>
 
     <ion-list>
-      <ion-item-sliding *ngFor="let guia of guias">
-        <ion-item lines="none" button [routerLink]="['/details', guia.id]">
+      <ion-item-sliding *ngFor="let guia of guias" lines="none">
+        <ion-item class="lista" button [routerLink]="['/details', guia.id]">
           <ion-avatar slot="start">
             <img [src]="guia.foto">
           </ion-avatar>
@@ -67,8 +67,9 @@
       </ion-item-sliding>
     </ion-list>
 
-    <div class="footer-bottom">
-      <h6>Guia+ 2019. Versão 1.0.0.</h6>
+    <div class="footer">
+      <p id="p1">Guia+ 2019. Todos os direitos reservados.</p>
+      <p id="p2">Versão 1.0.0.</p>
     </div>
 
   </ion-card>

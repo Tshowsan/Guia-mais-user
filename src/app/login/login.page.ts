@@ -13,6 +13,8 @@ export class LoginPage implements OnInit {
 
   private loading: any;
   private user: User ={};
+
+  tipo: boolean;
   
   constructor(
     public router: Router,
@@ -73,6 +75,10 @@ export class LoginPage implements OnInit {
 
   limpar() {
     this.user = null;
+  }
+
+  exibirOcultar() {
+    this.tipo = !this.tipo;
   }
 
 }

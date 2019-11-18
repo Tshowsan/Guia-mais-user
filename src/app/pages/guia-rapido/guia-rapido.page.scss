@@ -1,5 +1,13 @@
+.topo {
+  background-color: rgb(90, 196, 249);
+
+  ion-title {
+      color: white;
+  }
+}
+
 .card-list {
-  margin: auto;
+  /* margin: auto;
   margin-top: 10px;
   width: 90%;
   height: 85%;
@@ -10,7 +18,12 @@
   z-index: 4;
   box-shadow: 5px 5px 0 #d9d9d9;
   -webkit-box-shadow: 5px 5px 0 #d9d9d9;
-  -moz-box-shadow: 5px 5px 0 #d9d9d9;
+  -moz-box-shadow: 5px 5px 0 #d9d9d9; */
+
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .list-card {
@@ -19,13 +32,23 @@
 }
 
 ion-list {
-  width: 95%;
+  width: 100%;
   margin: auto;
   margin-top: 20px;
+
+  .lista {
+    width: 95%;
+  }
+
 }
 
-ion-item {
+/* ion-item {
   background-color: #f2f2f2;
+} */
+
+ion-avatar {
+  width: 60px !important;  
+  height: 60px !important;
 }
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
@@ -71,21 +94,30 @@ h1 { font-size: 1.5em; margin: 10px; }
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
 
-.footer-bottom {
-  h6 {
-    text-align: center;
-    color: #fff;
-    margin: 0!important;
-  }
-  height: 20px;
+.footer {
+  #p1 {
+      text-align: center;
+      color: #fff;
+      margin: 0!important;
+      padding-top: 3%;
+      font-size: 15px;
+    }
+  #p2 {
+      text-align: center;
+      color: #fff;
+      margin: 0!important;
+      padding-top: 1%;    }  
+  height: 60px;
   width: 100%;
+  margin: 0;
   position: absolute;
-  bottom: 4px;
-  margin-bottom: 15px;
+  background-color: rgb(90, 196, 249);
+  bottom: 0.1px;
+  margin-bottom: 0;
 }
 
 @media (min-width: 240px) and (max-width: 768px) {
-  .card-list {
+  /* .card-list {
       width: 100%;
       height: 100%;
       border: none;
@@ -109,6 +141,6 @@ h1 { font-size: 1.5em; margin: 10px; }
     position: absolute;
     bottom: 4px;
     margin-bottom: 15px;
-  }
+  } */
 
 }

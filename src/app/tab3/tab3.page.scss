@@ -1,5 +1,13 @@
+.topo {
+  background-color: rgb(90, 196, 249);
+
+  ion-title {
+      color: white;
+  }
+}
+
 .card-list {
-    margin: auto;
+/*     margin: auto;
     margin-top: 10px;
     width: 90%;
     height: 85%;
@@ -10,17 +18,28 @@
     z-index: 4;
     box-shadow: 5px 5px 0 #d9d9d9;
     -webkit-box-shadow: 5px 5px 0 #d9d9d9;
-    -moz-box-shadow: 5px 5px 0 #d9d9d9;
+    -moz-box-shadow: 5px 5px 0 #d9d9d9; */
+
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 100%;
   }
   
   ion-list {
-    width: 95%;
+    width: 100%;
     margin: auto;
     margin-top: 20px;
+
+    .lista {
+      width: 95%;
+    }
+
   }
   
-  ion-item {
-    background-color: #f2f2f2;
+  ion-avatar {
+    width: 60px !important;  
+    height: 60px !important;
   }
   
   /* .list-card {
@@ -85,7 +104,7 @@
   .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
   
   @media (min-width: 240px) and (max-width: 768px) {
-    .card-list {
+   /*  .card-list {
         width: 100%;
         height: 100%;
         border: none;
@@ -109,7 +128,7 @@
       position: absolute;
       bottom: 4px;
       margin-bottom: 15px;
-    }
+    } */
   
   }
   

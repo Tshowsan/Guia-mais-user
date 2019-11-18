@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
@@ -6,54 +6,70 @@
   
       <ion-title>Detalhes do Guia</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
+
+<ion-header>
+  <div>
+    <ion-toolbar class="topo" color="custom-color">
+      <ion-buttons slot="start">
+        <ion-back-button color="light" defaultHref="/tabs/tab3"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Detalhes do Guia</ion-title>
+    </ion-toolbar>
+    <div>
+      <img [src]="guia.foto">
+    </div>
+    <ion-label>
+      {{guia.nome}}
+    </ion-label>
+  </div>
+</ion-header>
   
-  <ion-content>
+<ion-content>
 
-  <ion-card>
+  <!-- <ion-card class="card-info"> -->
 
-      <ion-list padding>
+  <ion-list>
 
-          <img [src]="guia.foto">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" [(ngModel)]="guia.email" disabled="true"></ion-input>
+    </ion-item>
 
-        <ion-item id="rounded">
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="text" [(ngModel)]="guia.email" disabled="true"></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="guia.nome" disabled="true"></ion-input>
+    </ion-item>
 
-        <ion-item id="rounded">
-          <ion-label position="floating">Nome</ion-label>
-          <ion-input type="text" [(ngModel)]="guia.nome" disabled="true"></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label position="floating">Sobrenome</ion-label>
+      <ion-input type="string" [(ngModel)]="guia.sobrenome" disabled="true"></ion-input>
+    </ion-item>
 
-        <ion-item id="rounded">
-          <ion-label position="floating">Sobrenome</ion-label>
-          <ion-input type="string" [(ngModel)]="guia.sobrenome" disabled="true"></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input type="string" [(ngModel)]="guia.telefone" disabled="true"></ion-input>
+    </ion-item>
 
-        <ion-item id="rounded">
-          <ion-label position="floating">Telefone</ion-label>
-          <ion-input type="string" [(ngModel)]="guia.telefone" disabled="true"></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cadastur</ion-label>
+      <ion-input type="string" [(ngModel)]="guia.cadastur" disabled="true"></ion-input>
+    </ion-item>
 
-        <ion-item id="rounded">
-          <ion-label position="floating">Cadastur</ion-label>
-          <ion-input type="string" [(ngModel)]="guia.cadastur" disabled="true"></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label position="floating">Linguas</ion-label>
+      <ion-input type="string" [(ngModel)]="guia.linguas" disabled="true"></ion-input>
+    </ion-item>
 
-        <ion-item id="rounded">
-          <ion-label position="floating">Linguas</ion-label>
-          <ion-input type="string" [(ngModel)]="guia.linguas" disabled="true"></ion-input>
-        </ion-item>
+  </ion-list>
 
-      </ion-list>
-
-  </ion-card>
+  <!-- </ion-card> -->
 
   <app-favorites [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome" [guiaFoto]="guia.foto"></app-favorites>
 
   <app-star-review [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome"></app-star-review>
 
   <app-comments [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome" [userFoto]="user.foto"></app-comments>
+
   
 </ion-content>

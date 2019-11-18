@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-settings',
@@ -15,20 +15,26 @@ export class SettingsComponent implements OnInit {
   constructor( 
     public router: Router,
     private authService: AuthService,
-    private loadingCtrl: LoadingController,) { }
+    private loadingCtrl: LoadingController,
+    private popoverCtrl: PopoverController) { }
 
   ngOnInit() {}
 
   async meusDados(){
-    this.router.navigate(['/meus-dados'])
+    this.router.navigate(['/meus-dados']);
+    this.popoverCtrl.dismiss();
+
   }
 
   async editarSenha(){
-    this.router.navigate(['/change-password'])
+    this.router.navigate(['/change-password']);
+    this.popoverCtrl.dismiss();
+
   }
 
   async guiaRapido(){
-    this.router.navigate(['/guia-rapido'])
+    this.router.navigate(['/guia-rapido']);
+    this.popoverCtrl.dismiss(); 
   }
 
   async logout() {
@@ -41,6 +47,7 @@ export class SettingsComponent implements OnInit {
     } finally {
       this.loading.dismiss();
     }
+    this.popoverCtrl.dismiss();
   }
 
   async presentLoading() {
