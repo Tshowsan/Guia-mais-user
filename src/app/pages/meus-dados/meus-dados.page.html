@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar class="topo" color="custom-color">
     <ion-title> Meus Dados </ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+      <ion-back-button color="light" defaultHref="/tabs/tab1"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -11,7 +11,7 @@
 
   <ion-card class="card-form">
 
-    <ion-list padding>
+    <ion-list>
 
         <ion-avatar slot="start">
           <img [src]="user.foto">
@@ -38,18 +38,28 @@
       </ion-item>
    -->
     </ion-list>
-    <!-- <ion-button  shape="round" expand="expand" color="success" [routerLink]="['/change-password']">
-      Alterar Senha
-    </ion-button> -->
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-button class="btn" expand="block" [routerLink]="['/editar-perfil']">
+          Editar Perfil
+        </ion-button>
+      </ion-col>
+       
+      <ion-col size="6">
+        <ion-button class="btn" expand="block" [routerLink]="['/change-password']">
+          Alterar Senha
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <div class="footer">
+      <p id="p1">Guia+ 2019. Todos os direitos reservados.</p>
+      <p id="p2">Versão 1.0.0.</p>
+    </div>
       
   </ion-card>
 
 </ion-content>
 
-<ion-footer>
-      <ion-button  shape="round" expand="expand" color="success" [routerLink]="['/editar-perfil']">
-        Editar Perfil
-    </ion-button>
-
-</ion-footer>
 

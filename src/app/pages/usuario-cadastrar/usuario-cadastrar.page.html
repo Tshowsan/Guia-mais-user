@@ -1,21 +1,19 @@
 <ion-header>
-  <ion-toolbar color="primary">
-   <!--  <ion-title> Cadastro de Usuário </ion-title> -->
+  <ion-toolbar class="topo" color="custom-color">
+    <ion-title>Cadastro</ion-title>
     <ion-buttons slot="start">
-        <ion-back-button defaultHref="/login"></ion-back-button>
+        <ion-back-button color="light" defaultHref="/login"></ion-back-button>
       </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <form [formGroup]="usuarioCadastrarForm">
+  <div class="cadastrar-form">
 
-    <ion-card class="cadastrar-form ion-padding">
+    <form [formGroup]="usuarioCadastrarForm">
 
-      <span><p>Cadastro</p></span>
-
-      <ion-item class="ion-margin-top" lines="none">
+      <ion-item class="campos" lines="none">
         <ion-icon name="create" slot="end"></ion-icon>
         <ion-input type="text" placeholder="Nome" formControlName="nome" [(ngModel)]="user.nome"></ion-input>
         <div class="errors" *ngIf="usuarioCadastrarForm.controls.nome.errors">
@@ -25,44 +23,50 @@
         </div>
       </ion-item>
 
-      <ion-item class="ion-margin-top"  lines="none">
+      <ion-item class="campos"  lines="none">
         <ion-icon name="mail" slot="end"></ion-icon>
         <ion-input type="email" placeholder="E-mail" formControlName="email" [(ngModel)]="user.email"></ion-input>
-        <div class="errors" *ngIf="usuarioCadastrarForm.controls.email.errors">
-          <h6 *ngIf="usuarioCadastrarForm.controls.email.errors.required"></h6>
-          <h6 *ngIf="usuarioCadastrarForm.controls.email.errors.pattern">E-mail invalido</h6>
-        </div>
       </ion-item>
+      <div class="errors" *ngIf="usuarioCadastrarForm.controls.email.errors">
+        <h6 *ngIf="usuarioCadastrarForm.controls.email.errors.required"></h6>
+        <h6 *ngIf="usuarioCadastrarForm.controls.email.errors.pattern">E-mail invalido</h6>
+      </div>
 
-      <ion-item class="ion-margin-top" lines="none">
+      <ion-item class="campos" lines="none">
         <ion-icon name="call" slot="end"></ion-icon>
         <ion-input type="number" placeholder="Telefone" formControlName="telefone" [(ngModel)]="user.telefone"></ion-input>
-        <div class="errors" *ngIf="usuarioCadastrarForm.controls.telefone.errors">
-          <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.required"></h6>
-          <!-- <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.pattern">Telefone inválido</h6> -->
-        </div>
       </ion-item>
+      <div class="errors" *ngIf="usuarioCadastrarForm.controls.telefone.errors">
+        <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.required"></h6>
+        <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.pattern">Telefone inválido</h6>
+      </div>
 
-      <ion-item class="ion-margin-top" lines="none">
+      <ion-item class="campos" lines="none">
         <ion-icon name="key" slot="end"></ion-icon>
         <ion-input type="password" placeholder="Senha" formControlName="password" [(ngModel)]="user.password"></ion-input>
-        <div class="errors" *ngIf="usuarioCadastrarForm.controls.password.errors">
-          <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.required"></h6>
-          <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.minlength">A senha deve conter no minimo 6 caracteres</h6>
-          <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.maxlength">A senha deve conter no maximo 12 caracteres</h6>
-        </div>
       </ion-item>
+      <div class="errors" *ngIf="usuarioCadastrarForm.controls.password.errors">
+        <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.required"></h6>
+        <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.minlength">A senha deve conter no minimo 6 caracteres</h6>
+        <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.maxlength">A senha deve conter no maximo 12 caracteres</h6>
+      </div>
+      
+    </form>
+    
+  </div> 
 
-      <ion-button class="ion-margin-top" expand="block" color="light" (click)="register()" [disabled]="!usuarioCadastrarForm.valid">
-          Cadastrar
-      </ion-button>
+  <div>
+    <ion-button class="btn" shape="round" expand="full" (click)="register()" [disabled]="!usuarioCadastrarForm.valid">
+        Cadastrar
+    </ion-button>
+    <ion-button class="btn-2" shape="round" expand="full"  (click)="limpar()">
+        Cancelar
+    </ion-button> 
+  </div>
 
-      <!-- <ion-button class="ion-margin-top" expand="block" color="light" (click)="limpar()">
-          Cancelar
-      </ion-button> -->
-
-    </ion-card>
-
-  </form>
+  <div class="footer">
+    <p id="p1">Guia+ 2019. Todos os direitos reservados.</p>
+    <p id="p2">Versão 1.0.0.</p>
+  </div>
 
 </ion-content>
