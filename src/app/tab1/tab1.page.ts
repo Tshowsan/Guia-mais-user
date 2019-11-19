@@ -3,6 +3,8 @@ import { AuthService } from '../services/auth.service';
 import { LoadingController, ToastController, PopoverController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SettingsComponent } from '../components/settings/settings.component';
+import { User } from '../interfaces/user';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-tab1',
@@ -12,6 +14,9 @@ import { SettingsComponent } from '../components/settings/settings.component';
 export class Tab1Page {
 
   private loading: any;
+  private user: User ={};
+  private userSubscription: Subscription;
+
 
   constructor(
     public router: Router,
@@ -19,7 +24,18 @@ export class Tab1Page {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private popoverCtrl: PopoverController
-  ) {}
+  ) {
+    this.loadUser();
+  }
+
+  ngOnDestroy() {
+    if (this.userSubscription) this.userSubscription.unsubscribe();
+    this.limpar();
+  }
+
+  limpar(){
+    this.user = null;
+  }
 
   async logout() {
     await this.presentLoading();
@@ -36,6 +52,12 @@ export class Tab1Page {
   async presentLoading() {
     this.loading = await this.loadingCtrl.create({ message: 'Aguarde...' });
     return this.loading.present();
+  }
+
+  loadUser() {
+    this.userSubscription = this.authService.getUser(this.authService.getAuth().currentUser.uid).subscribe(data => {
+      this.user = data;
+    });
   }
 
   async guiaRapido(){
