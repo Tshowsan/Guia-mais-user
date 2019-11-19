@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar class="topo" color="custom-color">
-    <ion-title> Bem vindo ao Guia+ </ion-title>
+    <ion-title> Bem vindo {{ user.nome }}</ion-title>
     <ion-button class="opcoes" fill="clear" slot="end" (click)="mostrarOpcoes($event)">
       <ion-icon name="person" color="light"></ion-icon>
       <ion-icon name="arrow-dropdown" color="light"></ion-icon>

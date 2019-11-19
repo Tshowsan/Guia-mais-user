@@ -44,7 +44,7 @@
 
 <!-- </ion-content>  -->
 
-<ion-content >
+<!-- <ion-content >
   <div class="fundo">
 
     <img src="../../assets/images/logo.png">
@@ -75,5 +75,55 @@
 
   </div>
   
+</ion-content> -->
+
+
+<ion-content >
+
+  <ion-card class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="img-center">
+          <ion-img class="logo" [src]="logoWhite"></ion-img>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-icon class='icon' name="person" slot="start"></ion-icon>
+            <ion-label color='theme' class="icon" position='floating'>Login</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="user.email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color='theme' class="icon" position='floating'>Senha</ion-label>
+            <ion-input [type]="tipo ? 'text': 'password'" value="" [(ngModel)]="user.password"></ion-input>
+            <ion-icon class='icon' [name]="tipo ? 'unlock' : 'lock'" (click)="exibirOcultar()" slot="start"></ion-icon>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="text-center" style="margin-bottom: 6%;">
+          <span class="txt-span" [routerLink]="['/reset-password']">Esqueceu sua senha?</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button style="margin-bottom: 5%;" size='large' shape='round' class="btn-init1" expand='block'
+          (click)="logar()">Entrar
+          </ion-button>
+          <ion-button size='large' shape='round' class="btn-init" expand='block' (click)="cadastrar()">Cadastrar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="text-center2" style="margin-bottom: 3%;">
+          <span class="txt-span">Versão 1.0.0.</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
 </ion-content>
 
