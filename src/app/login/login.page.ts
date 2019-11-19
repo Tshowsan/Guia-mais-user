@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
+  logoWhite = '../../assets/images/logoWhite.png'
+
   private loading: any;
   private user: User ={};
 

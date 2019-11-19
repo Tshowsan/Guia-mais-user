@@ -5,16 +5,13 @@
 
     h3 {
         margin-top: 10%;
-        text-decoration: underline;
+        color: #b2b2b2;
     }
 }
 
 .comment-area {
-    width: 95%;
-    height: 200px;
-    margin-top: 5%;
-    position: relative;
-    border: solid 0.8px;
+    border: solid 1px #b2b2b2;
+    border-radius: 10px;
 }
 
 .btn {
