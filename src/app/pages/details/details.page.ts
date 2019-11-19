@@ -1,8 +1,10 @@
+import { Favorite } from './../../interfaces/favorites';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { FavoritesService } from './../../services/favorites.service';
 import { Guia } from './../../interfaces/guia';
 import { GuiaService } from './../../services/guia.service';
 import { User } from './../../interfaces/user';
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -17,16 +19,20 @@ export class DetailsPage implements OnInit {
   private userId: string = null;
   public guia: Guia = {};
   public user: User = {};
+  public favoritado: boolean;
+  public favorite = new Array<Favorite>();
   private loading: any;
   private userSubscription: Subscription;
   private guiaSubscription: Subscription;
+  private favoriteSubscription : Subscription;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private loadingCtrl: LoadingController,
     private guiaService: GuiaService,
     private toastCtrl: ToastController,
-    private authService: AuthService
+    private authService: AuthService,
+    private favoritesService: FavoritesService
   ){
     
     this.guiaId = this.activatedRoute.snapshot.params['id'];
@@ -34,11 +40,15 @@ export class DetailsPage implements OnInit {
 
     if (this.guiaId) this.loadGuia();
     if (this.userId) this.loadUser();
+    this.loadFavorite();
+    if(this.userSubscription) this.guiaFavoritado();
+    
   }
 
   ngOnInit() { 
 
   }
+
 
   ngOnDestroy() {
     if (this.guiaSubscription) this.guiaSubscription.unsubscribe();
@@ -48,6 +58,12 @@ export class DetailsPage implements OnInit {
   loadGuia() {
     this.guiaSubscription = this.guiaService.getGuia(this.guiaId).subscribe(data => {
       this.guia = data;
+    });
+  }
+
+  loadFavorite(){
+    this.favoriteSubscription = this.favoritesService.getFavorites(this.userId, this.guiaId).subscribe(data => {
+      this.favorite = data;
     });
   }
 
@@ -68,5 +84,8 @@ export class DetailsPage implements OnInit {
     toast.present();
   }
 
+  guiaFavoritado(){
+    this.favoritado = true;
+  }
 }
 
