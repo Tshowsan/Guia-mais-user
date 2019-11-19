@@ -41,17 +41,13 @@ export class FavoritesComponent implements OnInit {
     this.favoriteSubscription.unsubscribe();
   }
 
-  async favoriteHandler(control) {
+  async favoriteHandler() {
     await this.presentLoading();
-    if(control !== true){
-    this.favoritesService.setFavorite(this.userId, this.userName, this.guiaId, this.guiaName, this.guiaFoto, this.control)
-      await this.loading.dismiss();
+    this.favoritesService.setFavorite(this.userId, this.userName, this.guiaId, this.guiaName, this.guiaFoto)
       this.presentToast('Guia favoritado com sucesso');
-    }else{
-      this.favoritesService.deleteFovorite(this.userId,this.guiaId);
       await this.loading.dismiss();
-      this.presentToast('Guia removido dos favoritos');
-    }
+
+ 
   }
 
   async presentLoading() {

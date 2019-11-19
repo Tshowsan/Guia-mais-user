@@ -14,11 +14,19 @@
         <ion-avatar slot="start">
           <img [src]="favorite.guiaFoto">
         </ion-avatar>
-
         <ion-label>
           {{ favorite.guiaName }}
         </ion-label>
       </ion-item>
+      <ion-button color="danger" (click)="deletarFavorito(favorite.id)">
+          <ion-icon slot="top" name="trash"></ion-icon> 
+        Excluir</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>
+<!-- <ion-item-options side="end">
+  <ion-item-option color="danger" (click)="deleteFavoriteId(favorite.id)">
+    <ion-icon slot="top" name="trash"></ion-icon>
+    Excluir
+  </ion-item-option>
+</ion-item-options> -->

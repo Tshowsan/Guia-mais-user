@@ -9,7 +9,6 @@ export interface Favorite {
   userName:string;
   guiaName:string;
   guiaFoto:string;
-  ativo:boolean;
 }
 
 
@@ -47,9 +46,9 @@ export class FavoritesService {
   }
 
   // Create or update favorites
-  setFavorite(userId, userName, guiaId, guiaName, guiaFoto, ativo) {
+  setFavorite(userId, userName, guiaId, guiaName, guiaFoto) {
     // Star document data
-    const favorite: Favorite = { userId, userName, guiaId, guiaName, guiaFoto, ativo};
+    const favorite: Favorite = { userId, userName, guiaId, guiaName, guiaFoto};
 
     // Custom doc ID for relationship
     const favoritePath = `favorites/${favorite.userId}_${favorite.guiaId}`;
@@ -60,6 +59,10 @@ export class FavoritesService {
 
   deleteFovorite(userId, guiaId) {
     const favoritePath = `favorites/${userId}_${guiaId}`;
+    return this.afs.doc(favoritePath).delete();
+  }
+  deleteFovoriteId(id) {
+    const favoritePath = `favorites/${id}`;
     return this.afs.doc(favoritePath).delete();
   }
 
