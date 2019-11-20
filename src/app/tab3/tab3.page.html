@@ -5,6 +5,12 @@
       <ion-back-button color="light" defaultHref="/tabs/tab1"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
+  <ion-toolbar color="tertiary">
+    <ion-searchbar placeholder="Buscar usuario..."
+                   animated
+                   (ionChange)="buscarUsuario( $event )">
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -30,9 +36,9 @@
       </ion-item>
     </ion-list> -->
 
-  <ion-searchbar showcancelbutton="" (ioninput)="filterList($event)"></ion-searchbar>
+
     <ion-list>
-      <ion-item *ngFor="let guia of guias">
+      <ion-item *ngFor="let guia of guias | filtro:textoBuscar">
         <ion-item class="lista" button [routerLink]="['/details', guia.id]">
           <ion-avatar slot="start">
             <img [src]="guia.foto">

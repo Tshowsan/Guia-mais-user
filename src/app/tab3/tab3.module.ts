@@ -1,3 +1,4 @@
+import { PipesModule } from './../pipes/pipes.module';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -7,6 +8,7 @@ import { Tab3Page } from './tab3.page';
 
 @NgModule({
   imports: [
+    PipesModule,
     IonicModule,
     CommonModule,
     FormsModule,

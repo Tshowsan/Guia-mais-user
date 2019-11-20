@@ -15,6 +15,7 @@ export class Tab3Page {
   public guias = new Array<Guia>();
   private guiaSubscription: Subscription;
   public loadedGuiaList: any[];
+  textoBuscar = '';
 
   constructor(
     private guiaService: GuiaService,
@@ -25,6 +26,14 @@ export class Tab3Page {
       this.guias = data;
       this.loadedGuiaList = data;
     });
+  }
+
+  buscarUsuario( event ) {
+
+    const texto = event.target.value;
+    this.textoBuscar = texto;
+
+
   }
 
   ngOnInit() {
