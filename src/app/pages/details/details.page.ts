@@ -15,6 +15,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
+
   private guiaId: string = null;
   private userId: string = null;
   public guia: Guia = {};
