@@ -1,4 +1,4 @@
-div {
+/* div {
     background-color: rgb(90, 196, 249);
 
     ion-label {
@@ -44,3 +44,103 @@ ion-item {
     margin-left: 10px;
 }
 
+ */
+
+ .content {
+    --background: linear-gradient(207deg, rgb(28, 159, 246) 0%, rgba(90, 196, 249, 1) 84%);
+    --border-width: 0px;
+    --min-height: 196px;
+}
+
+ion-item {
+    // --border-width: 2px;
+    // --border-radius: 10px;
+    margin-bottom: 5%;
+}
+
+.btn-init {
+    --background: rgb(54, 174, 247);
+    --border-radius: 10px;
+}
+
+ion-back-button {
+    --icon-font-size: 30px
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.title-desc {
+    text-align: center;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+span {
+    color: #fff;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+ion-label {
+    color: #b2b2b2;
+}
+
+.icon {
+    color: #b2b2b2;
+}
+
+p {
+    color: #b2b2b2;
+    font-size: 1.2rem;
+}
+
+b {
+    color: #b2b2b2;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+ion-toggle {
+    --background-checked: #fff;
+    --handle-background-checked: #FFD400;
+}
+
+h2 {
+    color: #fff;
+}
+
+ion-textarea {
+    border: solid 1px #b2b2b2;
+    border-radius: 10px;
+}
+
+.title-com {
+    color: #b2b2b2;
+}
+
+.com-ion-avatar {
+    width: 65px;
+    height: 65px;
+}
+
+.com-h2 {
+    color: #b2b2b2;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.com-p {
+    color: #b2b2b2;
+    font-size: 0.9rem;
+}
+
+.com-span {
+    color: #b2b2b2;
+    font-size: 0.8rem;
+}

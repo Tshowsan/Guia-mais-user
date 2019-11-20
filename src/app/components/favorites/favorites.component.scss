@@ -1,4 +1,4 @@
-div {
+/* div {
     h3 {
         width: 100%;
         margin-top: 30px;
@@ -9,5 +9,15 @@ div {
         margin-top: 25px;
         margin-left: 50px;
         color: rgb(90, 196, 249);
+    }
+} */
+
+div {
+    ion-item {
+        margin-bottom: 5%;
+    }
+
+    ion-label {
+        color: #b2b2b2;
     }
 }
