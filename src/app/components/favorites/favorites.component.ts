@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { FavoritesService } from 'src/app/services/favorites.service';
 import { LoadingController, ToastController } from '@ionic/angular';
+import { Favorite } from 'src/app/interfaces/favorites';
 
 @Component({
   selector: 'app-favorites',
@@ -18,36 +19,35 @@ export class FavoritesComponent implements OnInit {
   @Input() guiaFoto;
   control: boolean;
   private loading: any;
+  public favorites = {};
+  private favoriteSubscription : Subscription;
 
   favorite: Observable<any>;
-  // avgRating: Observable<any>;
 
   constructor(
     private favoritesService: FavoritesService,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController
-    ) { }
+    ) {
+      this.favorites = null; 
+      this.loadFavorite();
+    }
 
   ngOnInit() {
-    this.favorite = this.favoritesService.getUserFavorites(this.userId,this.guiaId)
-
-    // this.avgRating = this.stars.map(arr => {
-    //   const ratings = arr.map(v => v.value)
-    //   return ratings.length ? ratings.reduce((total, val) => total + val) / arr.length : 'not reviewed'
-    // })
+    // this.favorite = this.favoritesService.getFavorites(this.userId,this.guiaId)
+  }
+  ngOnDestroy() {
+    this.favorites = null;
+    this.favoriteSubscription.unsubscribe();
   }
 
-  async favoriteHandler(control) {
+  async favoriteHandler() {
     await this.presentLoading();
-    if(control !== true){
-    this.favoritesService.setFavorite(this.userId, this.userName, this.guiaId, this.guiaName, this.guiaFoto, this.control)
-      await this.loading.dismiss();
+    this.favoritesService.setFavorite(this.userId, this.userName, this.guiaId, this.guiaName, this.guiaFoto)
       this.presentToast('Guia favoritado com sucesso');
-    }else{
-      this.favoritesService.deleteFovorite(this.userId,this.guiaId);
       await this.loading.dismiss();
-      this.presentToast('Guia removido dos favoritos');
-    }
+
+ 
   }
 
   async presentLoading() {
@@ -58,5 +58,20 @@ export class FavoritesComponent implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
+  }
+
+  guiaFavoritado(){
+    this.control = true;
+  }
+
+  loadFavorite(){
+    this.favoriteSubscription = this.favoritesService.getFovorite(this.userId,this.guiaId).subscribe(data => {
+      this.favorites = data;
+      if(this.favorite !== null){
+        this.control = true;
+      }if(this.favorites == null){
+        this.control = false;
+      }
+    });
   }
 }

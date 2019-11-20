@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+
 export interface Guia {
     id?: string;
     nome?: string;
@@ -10,4 +12,5 @@ export interface Guia {
     ativo?: boolean;
     plantao?: boolean;
     foto?: string;
+    avaliacao?: number;
 }

@@ -9,7 +9,6 @@ export interface Favorite {
   userName:string;
   guiaName:string;
   guiaFoto:string;
-  ativo:boolean;
 }
 
 
@@ -22,9 +21,22 @@ export class FavoritesService {
   constructor(private afs: AngularFirestore) { }
 
   // favorites that belong to a user
-  getUserFavorites(userId,guiaId) {
-    const favoritesRef = this.afs.collection('favorites', ref => ref.where('userId', '==', userId).where('guiaId', '==' , guiaId) );
-    return favoritesRef.valueChanges();
+  getFavorites(userId, guiaId) {
+    return this.afs.collection('favorites', ref => ref.where('userId', '==', userId).where('guiaId', '==' , guiaId)).snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+
+          return { id, ...data };
+        });
+      })
+    );
+  }
+
+  getFovorite(userId, guiaId) {
+    const favoritePath = `favorites/${userId}_${guiaId}`;
+    return this.afs.doc(favoritePath).valueChanges();
   }
 
   // Get all favorites that belog to a Guia
@@ -34,9 +46,9 @@ export class FavoritesService {
   }
 
   // Create or update favorites
-  setFavorite(userId, userName, guiaId, guiaName, guiaFoto, ativo) {
+  setFavorite(userId, userName, guiaId, guiaName, guiaFoto) {
     // Star document data
-    const favorite: Favorite = { userId, userName, guiaId, guiaName, guiaFoto, ativo};
+    const favorite: Favorite = { userId, userName, guiaId, guiaName, guiaFoto};
 
     // Custom doc ID for relationship
     const favoritePath = `favorites/${favorite.userId}_${favorite.guiaId}`;
@@ -46,8 +58,11 @@ export class FavoritesService {
   }
 
   deleteFovorite(userId, guiaId) {
-    
     const favoritePath = `favorites/${userId}_${guiaId}`;
+    return this.afs.doc(favoritePath).delete();
+  }
+  deleteFovoriteId(id) {
+    const favoritePath = `favorites/${id}`;
     return this.afs.doc(favoritePath).delete();
   }
 
