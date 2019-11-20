@@ -88,7 +88,7 @@
       <ion-row>
         <ion-col class="title">
           <ion-avatar>
-            <img [src]="user.foto">
+            <img [src]="guia.foto">
           </ion-avatar>
         </ion-col>
       </ion-row>
@@ -152,11 +152,11 @@
       </ion-col>
     </ion-row>
 
-    <!-- <app-favorites [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome" [guiaFoto]="guia.foto"></app-favorites> -->
+    <app-favorites [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome" [guiaFoto]="guia.foto"></app-favorites> 
 
-    <!-- <app-star-review [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome"></app-star-review>
+    <app-star-review [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome"></app-star-review>
 
-    <app-comments [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome" [userFoto]="user.foto"></app-comments> -->
+    <app-comments [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome" [userFoto]="user.foto"></app-comments>
 
     <ion-row>
       <ion-col>
