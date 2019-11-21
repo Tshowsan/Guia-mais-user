@@ -77,7 +77,7 @@
 <ion-header>
     <ion-toolbar mode='ios' class="content">
       <ion-buttons slot="start">
-        <ion-back-button style="color: #fff;"></ion-back-button>
+        <ion-back-button style="color: #fff;" defaultHref="/tabs/tab3"></ion-back-button>
       </ion-buttons>
       <ion-title>
         <ion-row>
@@ -88,7 +88,7 @@
         <ion-row>
           <ion-col class="title">
             <ion-avatar>
-              <img [src]="user.foto">
+              <img [src]="guia.foto">
             </ion-avatar>
           </ion-col>
         </ion-row>
@@ -152,18 +152,18 @@
         </ion-col>
       </ion-row>
   
-     <!-- <app-favorites [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome" [guiaFoto]="guia.foto"></app-favorites> -->
+     <app-favorites [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome" [guiaFoto]="guia.foto"></app-favorites>
   
      <app-star-review [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome"></app-star-review>
   
      <app-comments [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome" [userFoto]="user.foto"></app-comments>
   
-      <ion-row>
+     <!--  <ion-row>
         <ion-col>
           <ion-button style="margin-bottom: 5%;" size='large' class="btn-init" expand='block'>Enviar
           </ion-button>
         </ion-col>
-      </ion-row>
+      </ion-row> -->
   
     </ion-grid>
   

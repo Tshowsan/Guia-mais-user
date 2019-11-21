@@ -1,4 +1,4 @@
-.topo {
+/* .topo {
     background-color: rgb(90, 196, 249);
 
     ion-title {
@@ -79,4 +79,140 @@ ion-list {
     background-color: rgb(90, 196, 249);
     bottom: 0.1px;
     margin-bottom: 0;
+} */
+
+
+
+.content {
+    --background: linear-gradient(207deg, rgb(28, 159, 246) 0%, rgba(90, 196, 249, 1) 84%);
+    --border-width: 0px;
+    --min-height: 80px;
+}
+
+ion-grid {
+    padding: 2% 10%;
+}
+
+img {
+    margin-top: 5px;
+    margin-left: 0;
+    width: 100px;
+    height: 100px;
+    max-width: 200px !important;
+    max-height: 200px !important;
+}
+
+.title {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    color: #fff;
+}
+
+ion-title {
+    color: #fff;
+}
+
+ion-item {
+    //--border-width: 2px;
+    //--border-radius: 10px;
+    margin-top: 10%;
+    color: #b2b2b2;
+}
+
+.icon {
+    color: #b2b2b2;
+}
+
+.ion-margin-top {
+    margin-top: 5%;
+}
+
+.btn-init {
+    --background: rgb(54, 174, 247);
+    --border-radius: 10px;
+    margin-top: 7%;
+}
+
+ion-back-button {
+    --icon-font-size: 30px
+}
+
+
+.errors h6 {
+    color: red;
+    text-align: center;
+
+    ion-input {
+    border: 2px solid red;
+    }
+}
+
+
+@media (min-width: 240px) and (max-width: 768px) {
+
+    .content {
+        --background: linear-gradient(207deg, rgb(28, 159, 246) 0%, rgba(90, 196, 249, 1) 84%);
+        --border-width: 0px;
+        --min-height: 80px;
+    }
+
+    ion-grid {
+        padding: 5% 10%;
+    }
+
+    img {
+        margin-top: 5px;
+        margin-left: 0;
+        width: 100px;
+        height: 100px;
+        max-width: 150px !important;
+        max-height: 150px !important;
+    }
+
+    .title {
+        display: flex;
+        margin: 0;
+        justify-content: center;
+        color: #fff;
+    }
+
+    ion-title {
+        color: #fff;
+    }
+
+    ion-item {
+        //--border-width: 2px;
+        //--border-radius: 10px;
+        margin-top: 30%;
+        color: #b2b2b2;
+    }
+
+    .icon {
+        color: #b2b2b2;
+    }
+
+    .ion-margin-top {
+        margin-top: 20%;
+    }
+
+    .btn-init {
+        --background: rgb(54, 174, 247);
+        --border-radius: 10px;
+        margin-top: 20%;
+    }
+
+    ion-back-button {
+        --icon-font-size: 30px
+    }
+
+
+    .errors h6 {
+        color: red;
+        text-align: center;
+
+        ion-input {
+        border: 2px solid red;
+        }
+    }
 }
