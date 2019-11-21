@@ -33,6 +33,8 @@ export class CommentsComponent implements OnInit {
 
   commentHandler(text) {
     this.commentsService.setComment(this.userId, this.userName, this.userFoto, this.guiaId, this.guiaName, text)
+
+    this.text = null
   }
 
 }

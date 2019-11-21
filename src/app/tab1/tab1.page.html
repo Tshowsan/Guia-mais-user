@@ -1,62 +1,73 @@
 <ion-header>
-  <ion-toolbar class="topo" color="custom-color">
-    <ion-title> Bem vindo {{ user.nome }}</ion-title>
-    <ion-button class="opcoes" fill="clear" slot="end" (click)="mostrarOpcoes($event)">
-      <ion-icon name="person" color="light"></ion-icon>
-      <ion-icon name="arrow-dropdown" color="light"></ion-icon>
-    </ion-button>
+  <ion-toolbar mode='ios' class="content">
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" style="color: #fff;" name="exit"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen padding scroll-y="false" class="welcome">
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="text-align: center;" size='4' class="col-center" routerLink='/meus-dados'>
+        <ion-label>
+          <img style="margin-left: 5%; width: 63%;" src="../../assets/images/user.svg">
+          <p>
+            Perfil
+          </p>
+        </ion-label>
+      </ion-col>
+      <ion-col style="text-align: center;" size='4' class="col-center" routerLink='/editar-perfil'>
+        <ion-label>
+          <img style="margin-left: 13%; width: 63%;" src="../../assets/images/profile.svg">
+          <p>
+            Alterar perfil
+          </p>
+        </ion-label>
+      </ion-col>
+      <ion-col style="text-align: center;" size='4' class="col-center" routerLink='/change-password'>
+        <ion-label>
+          <img style="margin-left: 5%; width: 63%;" src="../../assets/images/padlock.svg">
+          <p>
+            Alterar senha
+          </p>
+        </ion-label>
+      </ion-col>
 
-  <ion-slides class="slides-itens" pager="true">
+    </ion-row>
 
-    <ion-slide>
-      <div class="img-content-1">
-        <img class="img-1" src="../../assets/images/logo-oficial.jpg" alt="logo-oficial">
-      </div>
-      <div class="text-content">
-        <p>O Guia+ é o aplicativo ideal para suas viagens!!
-         Onde você pode encontar Guias turísticos para acompanhar e tornar seus passeios 
-         mais proveitosos e torná-los uma experiência única!!</p>
-      </div>
-      
-    </ion-slide>
+    <ion-row>
+        <ion-col routerLink='/tabs/tab3' size='4' style="text-align: center; margin-top: 6%;" class="col-center">
+          <ion-label>
+            <img style="margin-left: 0%; width: 60%;" src="../../assets/images/note.svg">
+            <p>
+              Listar guias
+            </p>
+          </ion-label>
+        </ion-col>
 
-    <ion-slide>
-        <div class="img-content">
-          <img src="../../assets/images/guia de turismo.jpg" alt="guia de turismo">
-        </div>
-        <div class="text-content">
-          <p>Aqui você encontra uma lista de profissionais de turísmo cadastrados e certificados 
-           onde você poderá entrar em contato e contratar seus serviços!
-        </p>
-        </div>
-        
-    </ion-slide>
+        <ion-col routerLink='/meus-favoritos' size='4' style="text-align: center; margin-top: 6%;" class="col-center">
+          <ion-label>
+            <img style="margin-left: 0%; width: 60%;" src="../../assets/images/note.svg">
+            <p>
+              Favoritos
+            </p>
+          </ion-label>
+        </ion-col>
+        <ion-col routerLink='/guia-rapido' size='4' style="text-align: center; margin-top: 6%;" class="col-center">
+          <ion-label>
+            <img style="margin-left: 0%; width: 60%;" src="../../assets/images/note.svg">
+            <p>
+              Guia Rapido
+            </p>
+          </ion-label>
+        </ion-col>
+    </ion-row>
 
-    <ion-slide>
-        <div class="img-content-3">
-          <img class="img-3" src="../../assets/images/autoavaliacao.jpg" alt="autoavaliacao">
-        </div>
-        <div class="text-content">
-          <p>Você também poderá avaliar o serviço prestado e favoritar o profissional que escolher com base nas avaliações.</p>
-        </div>
-        
-    </ion-slide>
-
-  </ion-slides>
-
-  <!-- <ion-button (click)="logout()"  expand="block">
-    Sair
-  </ion-button> -->
-  <!-- <ion-button (click)="guiaRapido()"  expand="block">
-    Guia Rapido
-  </ion-button> -->
-
-  <!-- <div class="footer-bottom">
-    <h6>GuiaMais 2019. Todos os direitos reservados.</h6>
-  </div>
- -->
-</ion-content>
+  </ion-grid>
+</ion-content> 

@@ -5,24 +5,22 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { GuiaRapidoPage } from './guia-rapido.page';
-import { PipesModule } from 'src/app/pipes/pipes.module';
+import { ChatPage } from './chat.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: GuiaRapidoPage
+    component: ChatPage
   }
 ];
 
 @NgModule({
   imports: [
-    PipesModule,
     CommonModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [GuiaRapidoPage]
+  declarations: [ChatPage]
 })
-export class GuiaRapidoPageModule {}
+export class ChatPageModule {}

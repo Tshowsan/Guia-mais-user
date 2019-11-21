@@ -22,7 +22,9 @@ const routes: Routes = [
   { path: 'reset-password', loadChildren: './pages/reset-password/reset-password.module#ResetPasswordPageModule',canActivate:[LoggedGuard] },
   { path: 'change-password', loadChildren: './pages/change-password/change-password.module#ChangePasswordPageModule',canActivate:[AuthGuard] },
   { path: 'meus-favoritos', loadChildren: './pages/meus-favoritos/meus-favoritos.module#MeusFavoritosPageModule',canActivate:[AuthGuard] },
-  { path: 'meus-dados', loadChildren: './pages/meus-dados/meus-dados.module#MeusDadosPageModule',canActivate:[AuthGuard] }
+  { path: 'meus-dados', loadChildren: './pages/meus-dados/meus-dados.module#MeusDadosPageModule',canActivate:[AuthGuard] },
+  { path: 'chat', loadChildren: './pages/chat/chat.module#ChatPageModule',canActivate:[AuthGuard] },
+  { path: 'chat/:id', loadChildren: './pages/chat/chat.module#ChatPageModule',canActivate:[AuthGuard] }
  
 ];
 @NgModule({

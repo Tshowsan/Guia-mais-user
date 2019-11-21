@@ -14,6 +14,7 @@ export class GuiaRapidoPage implements OnInit {
   private loading: any;
   public guias = new Array<Guia>();
   private guiaSubscription: Subscription;
+  textoBuscar = '';
 
   constructor(
     private guiaService: GuiaService,
@@ -30,6 +31,11 @@ export class GuiaRapidoPage implements OnInit {
   ngOnDestroy() {
     this.guiaSubscription.unsubscribe();
     this.limpar();
+  }
+
+  buscarUsuario( event ) {
+    const texto = event.target.value;
+    this.textoBuscar = texto;
   }
 
   async presentLoading() {

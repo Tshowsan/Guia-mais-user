@@ -1,0 +1,13 @@
+  <h3>Conversando com {{chat.guiaNome}}</h3>
+  
+  <ion-item *ngFor="let chat of chats | async">
+    {{ chat.text }}
+  </ion-item>
+
+  <ion-textarea class="comment-area" rows='7' type="text" [(ngModel)]="text"></ion-textarea>
+  
+  <ion-button class="btn" type="button" (click)="chatHandler(text)" expand="block">
+    Enviar
+  </ion-button>
+  
+  </div>

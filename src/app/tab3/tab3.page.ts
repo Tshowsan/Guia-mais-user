@@ -29,11 +29,8 @@ export class Tab3Page {
   }
 
   buscarUsuario( event ) {
-
     const texto = event.target.value;
     this.textoBuscar = texto;
-
-
   }
 
   ngOnInit() {
