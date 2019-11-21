@@ -1,20 +1,22 @@
 <div class="comentarios">
-<h3>Deixe seu Comentário:</h3>
 
-<ion-textarea class="comment-area" rows='7' type="text" [(ngModel)]="text"></ion-textarea>
+  <h3>Deixe seu Comentário:</h3>
 
-<ion-button class="btn" type="button" (click)="commentHandler(text)" expand="block">
-  Enviar
-</ion-button>
+  <ion-textarea class="comment-area" rows='7' type="text" [(ngModel)]="text"></ion-textarea>
 
-<h3>Comentarios dos usuários:</h3>
+  <ion-button class="btn-init" type="button" style="margin-bottom: 5%;" size='large' (click)="commentHandler(text)" expand="block">
+    Enviar
+  </ion-button>
 
-<ion-item *ngFor="let comment of comments | async">
-  <ion-avatar slot="start">
-    <img [src]="comment.userFoto">
-  </ion-avatar>
-  "{{ comment.userName }}" comentou para "{{ comment.guiaName }}" {{ comment.text }}
-</ion-item>
+  <br>
+  <h3>Comentarios dos usuários:</h3>
+
+  <ion-item *ngFor="let comment of comments | async">
+    <ion-avatar slot="start">
+      <img [src]="comment.userFoto">
+    </ion-avatar>
+    "{{ comment.userName }}" comentou para "{{ comment.guiaName }}" {{ comment.text }}
+  </ion-item>
 
 </div>
 

@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar class="topo" color="custom-color">
     <ion-title> Meus Dados </ion-title>
     <ion-buttons slot="start">
@@ -32,11 +32,6 @@
         <ion-input type="string" [(ngModel)]="user.telefone" disabled="true"></ion-input>
       </ion-item>
 
-      <!-- <ion-item>
-        <ion-label position="floating">Senha</ion-label>
-        <ion-input type="string" [(ngModel)]="user.password" disabled="true"></ion-input>
-      </ion-item>
-   -->
     </ion-list>
 
     <ion-row>
@@ -60,6 +55,74 @@
       
   </ion-card>
 
+</ion-content> -->
+
+
+<ion-header>
+  <ion-toolbar mode='ios' class="content">
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #fff" defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-row>
+        <ion-col class="title">
+          Meus Dados<br>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="title">
+        <ion-avatar>
+          <img [src]="user.foto">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="title-desc">
+        <ion-label>
+          <h2>{{user.nome}}</h2>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon class='icon' name="person" slot="start"></ion-icon>
+            <b> Nome</b>
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="user.nome" disabled="true"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon class='icon' name="mail" slot="start"></ion-icon>
+            <b> E-mail</b>
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="user.email" disabled="true"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon class='icon' name="call" slot="start"></ion-icon>
+            <b> Telefone</b>
+          </ion-label>
+          <ion-input type="phone" [(ngModel)]="user.telefone" disabled="true"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-button style="margin-bottom: 0%;" size='large' class="btn-init" expand='block' [routerLink]="['/editar-perfil']">
+              Editar Perfil
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 
