@@ -13,11 +13,15 @@
 } */
 
 div {
-    ion-item {
-        margin-bottom: 5%;
+    ion-button {
+        justify-content: center;
+        margin-left: 20px;
+        --background: rgb(54, 174, 247);
+        --border-radius: 10px;
     }
 
-    ion-label {
+    h3 {
         color: #b2b2b2;
+        margin-left: 10px;
     }
 }

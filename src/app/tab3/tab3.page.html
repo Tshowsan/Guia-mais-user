@@ -1,21 +1,21 @@
 <ion-header>
-  <ion-toolbar class="topo" color="custom-color">
-    <ion-title> Listar Guias </ion-title>
+  <ion-toolbar mode='ios' class="content">
+    <ion-title> Lista de Guias </ion-title>
     <ion-buttons slot="start">
       <ion-back-button color="light" defaultHref="/tabs/tab1"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar >
+  <ion-toolbar mode='ios'>
     <ion-searchbar placeholder="Buscar usuario..."
                    animated
                    (ionChange)="buscarUsuario( $event )">
     </ion-searchbar>
-  </ion-toolbar>
+  </ion-toolbar> 
 </ion-header>
 
 <ion-content>
 
-  <ion-card class="card-list">
+  <!-- <ion-card class="card-list"> -->
 
     <!-- <ion-list *ngIf="!guias.length" lines="none">
       <ion-item *ngFor="let item of [0, 1, 2]">
@@ -39,7 +39,7 @@
 
     <ion-list>
       <ion-item *ngFor="let guia of guias | filtro:textoBuscar">
-        <ion-item class="lista" button [routerLink]="['/details', guia.id]">
+        <ion-item lines="none" class="lista" button [routerLink]="['/details', guia.id]">
           <ion-avatar slot="start">
             <img [src]="guia.foto">
           </ion-avatar>
@@ -76,10 +76,6 @@
       </ion-item>
     </ion-list>
 
-    <div class="footer-bottom">
-      <h6>Guia+ 2019. Versão 1.0.0.</h6>
-    </div>
-
-  </ion-card>
+  <!-- </ion-card> -->
 
 </ion-content>
