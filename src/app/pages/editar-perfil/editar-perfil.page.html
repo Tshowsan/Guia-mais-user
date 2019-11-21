@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar class="topo" color="custom-color">
     <ion-buttons slot="start">
       <ion-back-button color="light" defaultHref="/meus-dados"></ion-back-button>
@@ -37,7 +37,7 @@
         </ion-item>
         <div class="errors" *ngIf="usuarioEditarForm.controls.telefone.errors">
           <h6 *ngIf="usuarioEditarForm.controls.telefone.errors.required"></h6>
-          <!-- <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.pattern">Telefone inválido</h6> -->
+
         </div>
 
       </ion-list>
@@ -55,4 +55,23 @@
 
   </form>
 
-</ion-content>
+</ion-content> -->
+
+
+
+
+
+<ion-header>
+  <ion-toolbar mode='ios' class="content">
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #fff" defaultHref="/meus-dados"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-row>
+        <ion-col class="title">
+          Editar Perfil<br>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
