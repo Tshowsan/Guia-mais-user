@@ -38,6 +38,10 @@ export class GuiaService {
     return this.guiaCollection.doc<Guia>(id).valueChanges();
   }
 
+  updateGuia(id: string, guia: Guia) {
+    return this.guiaCollection.doc<Guia>(id).update(guia);
+  }
+
   getGuiaRapido() {
     //Ppegar da coleção um grupo de guias junto do ID com um parametro específico.
     return this.afs.collection('Guias', ref => ref.where('plantao', '==', true) ).snapshotChanges().pipe(

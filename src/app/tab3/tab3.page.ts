@@ -14,6 +14,8 @@ export class Tab3Page {
   private loading: any;
   public guias = new Array<Guia>();
   private guiaSubscription: Subscription;
+  public loadedGuiaList: any[];
+  textoBuscar = '';
 
   constructor(
     private guiaService: GuiaService,
@@ -22,14 +24,47 @@ export class Tab3Page {
   ) {
     this.guiaSubscription = this.guiaService.getGuiaAtivo().subscribe(data => {
       this.guias = data;
+      this.loadedGuiaList = data;
     });
   }
 
-  ngOnInit() { }
+  buscarUsuario( event ) {
+
+    const texto = event.target.value;
+    this.textoBuscar = texto;
+
+
+  }
+
+  ngOnInit() {
+   }
 
   ngOnDestroy() {
     this.guiaSubscription.unsubscribe();
     this.limpar();
+  }
+
+  initializeItems(): void {
+    this.guias = this.loadedGuiaList;
+  }
+
+  filterList(evt) {
+    this.initializeItems();
+  
+    const searchTerm = evt.srcElement.value;
+  
+    if (!searchTerm) {
+      return;
+    }
+  
+    this.guias = this.guias.filter(currentGuia => {
+      if (currentGuia.nome && searchTerm) {
+        if (currentGuia.nome.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
+          return true;
+        }
+        return false;
+      }
+    });
   }
 
   async presentLoading() {

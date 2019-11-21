@@ -5,13 +5,19 @@
       <ion-back-button color="light" defaultHref="/tabs/tab1"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
+  <ion-toolbar color="tertiary">
+    <ion-searchbar placeholder="Buscar usuario..."
+                   animated
+                   (ionChange)="buscarUsuario( $event )">
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
   <ion-card class="card-list">
 
-    <ion-list *ngIf="!guias.length" lines="none">
+    <!-- <ion-list *ngIf="!guias.length" lines="none">
       <ion-item *ngFor="let item of [0, 1, 2]">
         <ion-avatar slot="start">
           <ion-skeleton-text animated></ion-skeleton-text>
@@ -28,21 +34,23 @@
           </p>
         </ion-label>
       </ion-item>
-    </ion-list>
+    </ion-list> -->
+
 
     <ion-list>
-      <ion-item *ngFor="let guia of guias" lines="none">
+      <ion-item *ngFor="let guia of guias | filtro:textoBuscar">
         <ion-item class="lista" button [routerLink]="['/details', guia.id]">
           <ion-avatar slot="start">
             <img [src]="guia.foto">
           </ion-avatar>
-
           <ion-label>
-            {{ guia.nome }}
+            {{ guia.nome }} {{guia.sobrenome}}
             <p>{{ guia.email }}</p>
             <p>{{ guia.telefone }}</p>
             <!-- <p>{{ product.createdAt | date: 'short' }}</p> -->
           </ion-label>
+          <span>{{guia.avaliacao}} <ion-icon name='star'></ion-icon>
+          </span>
           <!-- <fieldset class="rating">
               <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
               <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>

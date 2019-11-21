@@ -31,5 +31,11 @@ export class MeusFavoritosPage implements OnInit {
     this.favoriteSubscription.unsubscribe();
   }
 
+  deletarFavorito(id){
+    this.favoriteService.deleteFovoriteId(id);
+  }
+
+
+
 
 }
