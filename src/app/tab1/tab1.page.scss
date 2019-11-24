@@ -1,12 +1,28 @@
 .content {
   --background: linear-gradient(207deg, rgba(90, 196, 249, 1) 0%, rgba(0, 142, 244, 1) 48%);
   --border-width: 0px;
-  // --min-height: 140px;
+  --min-height: 80px;
   --border-style: none;
 }
 
+.logo {
+  position: relative;
+  align-content: center;
+  width: 150px;
+  height: 60px;
+  margin-left: 20px;
+}
+
+ion-grid {
+  margin-top: 0%;
+}
+
 ion-item {
-  margin-bottom: 5%;
+  margin-bottom: 0%;
+}
+
+ion-row {
+  margin-top: 5%;
 }
 
 .btn-init {
@@ -42,4 +58,81 @@ span {
 ion-button {
   --color: #ccc;
   // --color: rgba(226, 139, 29, 1);
+}
+
+img {
+  margin-top: 2px;
+  width: 50px;
+  height: 60px;
+}
+
+p {
+  text-align: center;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+
+  .content {
+    //--background: linear-gradient(207deg, rgba(90, 196, 249, 1) 0%, rgba(0, 142, 244, 1) 48%);
+    --background: linear-gradient(207deg, rgb(28, 159, 246) 0%, rgba(90, 196, 249, 1) 84%);
+    --border-width: 0px;
+    --min-height: 80px;
+    --border-style: none;
+  }
+
+  .logo {
+    position: relative;
+    align-content: center;
+    width: 80px;
+    height: 50px;
+    margin-left: 20px;
+  }
+
+  ion-grid {
+    margin-top: 10%;
+  }
+
+  ion-item {
+    margin-bottom: 5%;
+  }
+
+  ion-row {
+    margin-top: 10%;
+  }
+
+  .btn-init {
+    --background: rgba(0, 142, 244, 1);
+    --border-radius: 10px;
+  }
+
+  ion-back-button {
+    --icon-font-size: 30px
+  }
+
+  ion-avatar {
+    width: 65px;
+    height: 65px;
+  }
+
+  h2 {
+    color: #b2b2b2;
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+
+  p {
+    color: #b2b2b2;
+    font-size: 0.9rem;
+  }
+
+  span {
+    color: #b2b2b2;
+    font-size: 0.8rem;
+  }
+
+  ion-button {
+    --color: #ccc;
+    // --color: rgba(226, 139, 29, 1);
+  }
+
 }

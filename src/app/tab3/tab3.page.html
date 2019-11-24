@@ -6,7 +6,7 @@
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar mode='ios'>
-    <ion-searchbar placeholder="Buscar usuario..."
+    <ion-searchbar placeholder="Buscar usuário..."
                    animated
                    (ionChange)="buscarUsuario( $event )">
     </ion-searchbar>
@@ -49,7 +49,7 @@
             <p>{{ guia.telefone }}</p>
             <!-- <p>{{ product.createdAt | date: 'short' }}</p> -->
           </ion-label>
-          <span>{{guia.avaliacao}} <ion-icon name='star'></ion-icon>
+          <span>{{guia.avaliacao}} <ion-icon name='star' color="warning"></ion-icon>
           </span>
           <!-- <fieldset class="rating">
               <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>

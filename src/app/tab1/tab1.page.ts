@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { LoadingController, ToastController, PopoverController } from '@ionic/angular';
+import { LoadingController, ToastController, PopoverController, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SettingsComponent } from '../components/settings/settings.component';
 import { User } from '../interfaces/user';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { NewsComponent } from '../components/news/news.component';
 
 @Component({
   selector: 'app-tab1',
@@ -23,7 +24,8 @@ export class Tab1Page {
     private authService: AuthService,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
-    private popoverCtrl: PopoverController
+    private popoverCtrl: PopoverController,
+    private modalCtrl: ModalController
   ) {
     this.loadUser();
   }
@@ -82,5 +84,11 @@ export class Tab1Page {
 
   }
 
+  async mostrarModal() {
+    const modal = await this.modalCtrl.create({
+      component: NewsComponent
+    });
+    modal.present();
+  }
 
 }
