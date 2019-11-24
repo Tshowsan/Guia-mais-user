@@ -1,11 +1,15 @@
 <ion-header>
   <ion-toolbar mode='ios' class="content">
+    <b><img class="logo" src="../../assets/images/logo-transparent.png"></b>
     <ion-buttons slot="end">
+      <ion-button (click)="mostrarModal()">
+          <ion-icon slot="icon-only" style="color: #fff" name="megaphone"></ion-icon>
+      </ion-button>
       <ion-button (click)="logout()">
         <ion-icon slot="icon-only" style="color: #fff;" name="exit"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>
+    <ion-title color="light">
       Home
     </ion-title>
   </ion-toolbar>
@@ -14,26 +18,26 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <ion-col style="text-align: center;" size='4' class="col-center" routerLink='/meus-dados'>
+      <ion-col col-12 col-sm-6 col-md-6 co-lg-4 style="text-align: center;" size='4' class="col-center" routerLink='/meus-dados'>
         <ion-label>
           <img style="margin-left: 5%; width: 63%;" src="../../assets/images/user.svg">
-          <p>
+          <p style="margin-left: 5%">
             Perfil
           </p>
         </ion-label>
       </ion-col>
-      <ion-col style="text-align: center;" size='4' class="col-center" routerLink='/editar-perfil'>
+      <ion-col col-12 col-sm-6 col-md-6 co-lg-4 style="text-align: center;" size='4' class="col-center" routerLink='/editar-perfil'>
         <ion-label>
           <img style="margin-left: 13%; width: 63%;" src="../../assets/images/profile.svg">
-          <p>
-            Alterar perfil
+          <p style="margin-left:10%">
+            Editar perfil
           </p>
         </ion-label>
       </ion-col>
-      <ion-col style="text-align: center;" size='4' class="col-center" routerLink='/change-password'>
+      <ion-col col-12 col-sm-6 col-md-6 co-lg-4 style="text-align: center;" size='4' class="col-center" routerLink='/change-password'>
         <ion-label>
           <img style="margin-left: 5%; width: 63%;" src="../../assets/images/padlock.svg">
-          <p>
+          <p style="margin-left: 5%">
             Alterar senha
           </p>
         </ion-label>
@@ -42,7 +46,7 @@
     </ion-row>
 
     <ion-row>
-        <ion-col routerLink='/tabs/tab3' size='4' style="text-align: center; margin-top: 6%;" class="col-center">
+        <ion-col col-12 col-sm-6 col-md-6 co-lg-4 routerLink='/tabs/tab3' size='4' style="text-align: center; margin-top: 6%;" class="col-center">
           <ion-label>
             <img style="margin-left: 0%; width: 60%;" src="../../assets/images/note.svg">
             <p>
@@ -51,18 +55,18 @@
           </ion-label>
         </ion-col>
 
-        <ion-col routerLink='/meus-favoritos' size='4' style="text-align: center; margin-top: 6%;" class="col-center">
+        <ion-col col-12 col-sm-6 col-md-6 co-lg-4 routerLink='/meus-favoritos' size='4' style="text-align: center; margin-top: 6%;" class="col-center">
           <ion-label>
-            <img style="margin-left: 0%; width: 60%;" src="../../assets/images/note.svg">
-            <p>
+            <img style="margin-left: 10%; width: 60%;" src="../../assets/images/note.svg">
+            <p style="margin-left:10%">
               Favoritos
             </p>
           </ion-label>
         </ion-col>
-        <ion-col routerLink='/guia-rapido' size='4' style="text-align: center; margin-top: 6%;" class="col-center">
+        <ion-col col-12 col-sm-6 col-md-6 co-lg-4 routerLink='/guia-rapido' size='4' style="text-align: center; margin-top: 6%;" class="col-center">
           <ion-label>
-            <img style="margin-left: 0%; width: 60%;" src="../../assets/images/note.svg">
-            <p>
+            <img style="margin-left: 10%; width: 60%;" src="../../assets/images/note.svg">
+            <p style="margin-left: 10%">
               Guia Rapido
             </p>
           </ion-label>

@@ -10,7 +10,7 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let favorite of favorites">
-      <ion-item class="lista" button [routerLink]="['/details', favorite.guiaId]">
+      <ion-item lines="none" class="lista" button [routerLink]="['/details', favorite.guiaId]">
         <ion-avatar slot="start">
           <img [src]="favorite.guiaFoto">
         </ion-avatar>
