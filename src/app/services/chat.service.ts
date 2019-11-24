@@ -3,13 +3,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 
 export interface Chat {
+  id?:any;
   userId?: any;
   guiaId?: any;
   userName?:string;
   guiaName?:string;
   userFoto?:string;
   guiaFoto?:string;
-  text?: string;
 }
 
 @Injectable({
@@ -21,10 +21,17 @@ export class ChatService {
 
     // Chats that belong to a user
     getUserChats(userId) {
-      const chatsRef = this.afs.collection('chats', ref => ref.where('userId', '==', userId) );
-      return chatsRef.valueChanges();
-    }
+      return this.afs.collection('chats', ref => ref.where('userId', '==', userId) ).snapshotChanges().pipe(
+        map(actions => {
+          return actions.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
   
+            return { id, ...data };
+          });
+        })
+      );
+    }
     // Get all chats that belog to a Guia
     getGuiaChats(guiaId) {
       const chatsRef = this.afs.collection('chats', ref => ref.where('guiaId', '==', guiaId) );
@@ -51,9 +58,9 @@ export class ChatService {
     }
   
     // Create or update chat
-    setChat(userId, userName, userFoto, guiaFoto, guiaId, guiaName, text) {
+    setChat(userId, userName, userFoto, guiaFoto, guiaId, guiaName) {
       // comment document data
-      const chat: Chat = { userId, userName, userFoto, guiaFoto, guiaId, guiaName, text};
+      const chat: Chat = { userId, userName, userFoto, guiaFoto, guiaId, guiaName};
   
       // Custom doc ID for relationship
       const chatPath = `chats/${chat.userId}_${chat.guiaId}`;

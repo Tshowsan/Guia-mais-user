@@ -1,19 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Conversando com {{guia.nome}}</ion-title>
+    <ion-title>Chats</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item *ngFor="let chat of chats | async">
-   {{chat.text}}
-  </ion-item>
+    <ion-list>
+        <ion-item *ngFor="let chat of chats">
+          <ion-item class="lista" button [routerLink]="['/mensagens', chat.id]">
+            <ion-avatar slot="start">
+              <img [src]="chat.guiaFoto">
+            </ion-avatar>
+            <ion-label>
+              {{ chat.guiaName }}
+            </ion-label>
+            <ion-label>
+                {{ chat.id }}
+              </ion-label>
+          </ion-item>
+        </ion-item>
+      </ion-list>
+      <ion-button (click)="chatHandler()"> Criar chat</ion-button>
 </ion-content>
-
-<ion-footer>
-  <ion-textarea class="comment-area" rows='7' type="text" [(ngModel)]="text"></ion-textarea>
-  
-  <ion-button class="btn" type="button" (click)="chatHandler(text)" expand="block">
-    Enviar
-  </ion-button>
-</ion-footer>

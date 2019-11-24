@@ -25,7 +25,6 @@ export class ChatPage implements OnInit {
   private guiaSubscription: Subscription;
   private chatSubscription: Subscription;
 
-  text: string;
   chats = new Array<Chat>();
   
   constructor(
@@ -43,7 +42,7 @@ export class ChatPage implements OnInit {
     if (this.guiaId) this.loadGuia();
     if (this.userId) this.loadUser();
 
-    this.chatSubscription = this.chatService.getChats(this.userId,this.guiaId).subscribe(data => {
+    this.chatSubscription = this.chatService.getUserChats(this.userId).subscribe(data => {
       this.chats = data;
     });
 
@@ -57,8 +56,8 @@ export class ChatPage implements OnInit {
     if (this.userSubscription) this.userSubscription.unsubscribe();
   }
 
-  chatHandler(text) {
-    this.chatService.setChat(this.userId, this.user.nome, this.user.foto, this.guia.foto, this.guiaId, this.guia.nome, text)
+  chatHandler() {
+    this.chatService.setChat(this.userId, this.user.nome, this.user.foto, this.guia.foto, this.guiaId, this.guia.nome)
   }
 
   loadGuia() {

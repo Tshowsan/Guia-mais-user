@@ -32,7 +32,7 @@ export class ChatComponent implements OnInit {
   }
 
   chatHandler(text) {
-    this.chatService.setChat(this.userId, this.userName, this.userFoto, this.guiaFoto, this.guiaId, this.guiaName, text)
+    this.chatService.setChat(this.userId, this.userName, this.userFoto, this.guiaFoto, this.guiaId, this.guiaName)
   }
 
 }

@@ -1,6 +1,7 @@
 import { CommentsService } from './../../services/comments.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-comments',
@@ -20,7 +21,9 @@ export class CommentsComponent implements OnInit {
   comments: Observable<any>;
   // avgRating: Observable<any>;
 
-  constructor(private commentsService: CommentsService) { }
+  constructor(
+    private commentsService: CommentsService,
+    public alertController: AlertController) { }
 
   ngOnInit() {
     this.comments = this.commentsService.getGuiaComments(this.guiaId)
@@ -35,6 +38,18 @@ export class CommentsComponent implements OnInit {
     this.commentsService.setComment(this.userId, this.userName, this.userFoto, this.guiaId, this.guiaName, text)
 
     this.text = null
+    this.presentAlert();
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Comentario Enviado',
+      // subHeader: 'Subtitle',
+      message: '',
+      buttons: ['Entendido']
+    });
+
+    await alert.present();
   }
 
 }
