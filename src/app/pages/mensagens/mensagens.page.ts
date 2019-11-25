@@ -17,12 +17,14 @@ export class MensagensPage implements OnInit {
   public chatId: string = null;
   public mensagens: Observable<any>
   public text: string
+  public userId: string;
 
   constructor( 
     private activatedRoute: ActivatedRoute,
     private authService: AuthService,
     private mensagensService : MensagensService) 
   {
+    this.userId = this.authService.getAuth().currentUser.uid
     this.chatId = this.activatedRoute.snapshot.params['id'];
    }
 
@@ -31,7 +33,7 @@ export class MensagensPage implements OnInit {
   }
 
   mensagensHandler(text) {
-    this.mensagensService.addMensagen(this.chatId, this.authService.getAuth().currentUser.uid, text)
+    this.mensagensService.addMensagen(this.chatId, this.userId, text)
 
   }
 
