@@ -23,6 +23,7 @@ ion-item {
 
 ion-row {
   margin-top: 5%;
+  border: none;
 }
 
 .btn-init {
@@ -83,9 +84,13 @@ p {
   .logo {
     position: relative;
     align-content: center;
-    width: 80px;
-    height: 50px;
-    margin-left: 20px;
+    width: 90px;
+    height: 55px;
+    margin-left: 130px;
+  }
+
+  .col-center {
+    border: none;
   }
 
   ion-grid {
