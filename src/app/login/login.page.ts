@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, ToastController, AlertController } from '@ionic/angular';
 import { User } from '../interfaces/user';
 import { Router } from '@angular/router';
 
@@ -23,6 +23,7 @@ export class LoginPage implements OnInit {
     private authService: AuthService,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
+    public alertController: AlertController
     ) { }
 
   ngOnInit() {
@@ -54,7 +55,8 @@ export class LoginPage implements OnInit {
                 break;
               
       }
-      this.presentToast(message);
+      // this.presentToast(message);
+      this.presentAlert(message);
     } finally {
       this.loading.dismiss();
     }
@@ -81,6 +83,17 @@ export class LoginPage implements OnInit {
 
   exibirOcultar() {
     this.tipo = !this.tipo;
+  }
+
+  async presentAlert(mensage) {
+    const alert = await this.alertController.create({
+      header: 'Erro ao logar',
+      // subHeader: 'Subtitle',
+      message: mensage,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
 }

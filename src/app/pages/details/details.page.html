@@ -21,9 +21,9 @@
           <ion-col class="title-desc">
             <ion-label>
               <h2>{{guia.nome}} {{guia.sobrenome}}</h2>
-              <h2>"Média"</h2>
+              <h2>{{guia.avaliacao}} <ion-icon name='star'></ion-icon></h2>
               <span>
-                <ion-icon name='pin'></ion-icon> 8km Pernambuco, Recife, BR
+                <ion-icon name='pin'></ion-icon> Pernambuco, Recife, BR
               </span>
             </ion-label>
           </ion-col>
@@ -82,13 +82,13 @@
   
      <app-comments [guiaId]="guiaId" [userId]="userId" [userName]="user.nome" [guiaName]="guia.nome" [userFoto]="user.foto"></app-comments>
   
-     <!--  <ion-row>
+      <!-- <ion-row>
         <ion-col>
           <ion-button style="margin-bottom: 5%;" size='large' class="btn-init" expand='block'>Enviar
           </ion-button>
         </ion-col>
       </ion-row> -->
-  
+  <ion-button [routerLink]="['/chat', guiaId]">Chat</ion-button>
     </ion-grid>
   
   </ion-content>  

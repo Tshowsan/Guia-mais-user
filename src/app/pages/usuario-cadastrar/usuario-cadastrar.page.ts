@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, ToastController, AlertController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from 'src/app/services/auth.service';
@@ -28,7 +28,8 @@ export class UsuarioCadastrarPage implements OnInit {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private afa: AngularFireAuth,
-    private afs: AngularFirestore
+    private afs: AngularFirestore,
+    public alertController: AlertController
    
   ) {
     this.usuarioCadastrarForm = this.formBuilder.group({
@@ -86,7 +87,8 @@ export class UsuarioCadastrarPage implements OnInit {
                 break;
               
       }
-      this.presentToast(message);
+      // this.presentToast(message);
+      this.presentAlert(message);
   }finally {
     this.logar();
     this.loading.dismiss();
@@ -114,6 +116,17 @@ async logar(){
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
+  }
+
+  async presentAlert(mensage) {
+    const alert = await this.alertController.create({
+      header: 'Erro ao logar',
+      // subHeader: 'Subtitle',
+      message: mensage,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
 }

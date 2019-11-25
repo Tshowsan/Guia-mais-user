@@ -24,7 +24,9 @@ const routes: Routes = [
   { path: 'meus-favoritos', loadChildren: './pages/meus-favoritos/meus-favoritos.module#MeusFavoritosPageModule',canActivate:[AuthGuard] },
   { path: 'meus-dados', loadChildren: './pages/meus-dados/meus-dados.module#MeusDadosPageModule',canActivate:[AuthGuard] },
   { path: 'chat', loadChildren: './pages/chat/chat.module#ChatPageModule',canActivate:[AuthGuard] },
-  { path: 'chat/:id', loadChildren: './pages/chat/chat.module#ChatPageModule',canActivate:[AuthGuard] }
+  { path: 'chat/:id', loadChildren: './pages/chat/chat.module#ChatPageModule',canActivate:[AuthGuard] },
+  { path: 'mensagens', loadChildren: './pages/mensagens/mensagens.module#MensagensPageModule',canActivate:[AuthGuard] },
+  { path: 'mensagens/:id', loadChildren: './pages/mensagens/mensagens.module#MensagensPageModule',canActivate:[AuthGuard] }
  
 ];
 @NgModule({

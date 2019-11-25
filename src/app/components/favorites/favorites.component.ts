@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { FavoritesService } from 'src/app/services/favorites.service';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, ToastController, AlertController } from '@ionic/angular';
 import { Favorite } from 'src/app/interfaces/favorites';
 
 @Component({
@@ -27,7 +27,8 @@ export class FavoritesComponent implements OnInit {
   constructor(
     private favoritesService: FavoritesService,
     private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    public alertController: AlertController
     ) {
       this.favorites = null; 
       this.loadFavorite();
@@ -44,7 +45,8 @@ export class FavoritesComponent implements OnInit {
   async favoriteHandler() {
     await this.presentLoading();
     this.favoritesService.setFavorite(this.userId, this.userName, this.guiaId, this.guiaName, this.guiaFoto)
-      this.presentToast('Guia favoritado com sucesso');
+      // this.presentToast('Guia favoritado com sucesso');
+      this.presentAlert();
       await this.loading.dismiss();
 
  
@@ -73,5 +75,16 @@ export class FavoritesComponent implements OnInit {
         this.control = false;
       }
     });
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Guia favoritado com Sucesso',
+      // subHeader: 'Subtitle',
+      message: 'O guia podera ser facilmente encontrado nos meus favoritos.',
+      buttons: ['Entendido']
+    });
+
+    await alert.present();
   }
 }

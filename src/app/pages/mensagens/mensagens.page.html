@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>mensagens</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngFor="let mensagem of mensagens | async">
+        {{ mensagem.text }}
+      </ion-item>
+</ion-content>
+
+<ion-footer>
+    <ion-textarea class="comment-area" rows='7' type="text" [(ngModel)]="text"></ion-textarea>
+
+    <ion-button class="btn-init" type="button" style="margin-bottom: 5%;" size='large' (click)="mensagensHandler(text)" expand="block">
+      Enviar
+    </ion-button>
+</ion-footer>

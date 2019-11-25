@@ -12,5 +12,5 @@ export interface Guia {
     ativo?: boolean;
     plantao?: boolean;
     foto?: string;
-    avaliacao?: number;
+    avaliacao?: string;
 }
