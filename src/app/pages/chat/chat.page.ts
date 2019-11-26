@@ -1,6 +1,6 @@
 import { Chat } from './../../services/chat.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { GuiaService } from 'src/app/services/guia.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -28,6 +28,7 @@ export class ChatPage implements OnInit {
   chats = new Array<Chat>();
   
   constructor(
+    public router: Router, 
     private activatedRoute: ActivatedRoute,
     private loadingCtrl: LoadingController,
     private guiaService: GuiaService,
@@ -58,6 +59,7 @@ export class ChatPage implements OnInit {
 
   chatHandler() {
     this.chatService.setChat(this.userId, this.user.nome, this.user.foto, this.guia.foto, this.guiaId, this.guia.nome)
+    // this.router.navigate(['/mensagens/this.userId_this.guiaId'])
   }
 
   loadGuia() {

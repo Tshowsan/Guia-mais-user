@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 export interface Chat {
   id?:any;
@@ -17,7 +18,9 @@ export interface Chat {
 })
 export class ChatService {
 
-  constructor(private afs: AngularFirestore) { }
+  constructor(
+    public router: Router,
+    private afs: AngularFirestore) { }
 
     // Chats that belong to a user
     getUserChats(userId) {
@@ -46,7 +49,7 @@ export class ChatService {
             const data = a.payload.doc.data();
             const id = a.payload.doc.id;
   
-            return { ...data };
+            return { id,...data };
           });
         })
       );
@@ -64,6 +67,8 @@ export class ChatService {
   
       // Custom doc ID for relationship
       const chatPath = `chats/${chat.userId}_${chat.guiaId}`;
+
+      this.router.navigate([`mensagens/${chat.userId}_${chat.guiaId}`])
   
       // Set the data, return the promise
       return this.afs.doc(chatPath).set(chat)
