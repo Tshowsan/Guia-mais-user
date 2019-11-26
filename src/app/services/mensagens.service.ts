@@ -7,6 +7,7 @@ export interface Mensagens{
   chatId?: string;
   text?: string;
   userId?: any;
+  userName?:string;
   Timestamp?:any;
 }
 
@@ -27,9 +28,9 @@ export class MensagensService {
     return commentRef.valueChanges();
   }
 
-  addMensagen(chatId, userId, text){
+  addMensagen(chatId, userId, userName, text){
     const Timestamp = firebase.firestore.FieldValue.serverTimestamp();
-    const mensagem : Mensagens = {chatId, userId, text ,Timestamp}
+    const mensagem : Mensagens = {chatId, userId, userName, text ,Timestamp}
 
     return this.mensagenCollection.add(mensagem);
   }
