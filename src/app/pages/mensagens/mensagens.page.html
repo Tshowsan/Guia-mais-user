@@ -4,23 +4,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="scroll-content">
     <div class="chat" *ngFor="let mensagem of mensagens | async">
-        <div class="me" *ngIf="userId == mensagem.userId">
+        <div class="you" *ngIf="userId == mensagem.userId">
           {{ mensagem.text }}
         </div>
-        <div class="you" *ngIf="userId != mensagem.userId">
+        <div class="me" *ngIf="userId != mensagem.userId">
+          <span class="name">
+            {{mensagem.userName}}
+          </span><br>
           {{mensagem.text}}
         </div>
     </div>
 </ion-content>
 
 <ion-footer>
+  <form [formGroup]="mensagensForm">
   <ion-item>
-    <ion-input placeholder="Digite uma mensagem" [(ngModel)]="text"></ion-input>
+    <ion-input placeholder="Digite uma mensagem" formControlName="text" [(ngModel)]="text"></ion-input>
     
-    <ion-button (click)="mensagensHandler(text)" fill="clear" icon-only slot="end">
+    <ion-button [disabled]="!mensagensForm.valid" (click)="mensagensHandler(text)" fill="clear" icon-only slot="end">
       <ion-icon name="send"></ion-icon>
     </ion-button>
   </ion-item>
+</form>
 </ion-footer>

@@ -1,6 +1,9 @@
 .chat{
+
+
     display: flex;
     flex-direction: column;
+
     .me{
         position: relative;
         margin: 20px 5px 0px;
@@ -11,6 +14,13 @@ border-radius: 15px 15px 0;
 background: #32db64;
 font-size: medium;
 line-height: 1.4;
+
+.name{
+  font-size: small;
+  font-weight: bold;
+
+
+}
 
 }
   .you{
@@ -25,4 +35,9 @@ font-size: medium;
 line-height: 1.4;
 
   }
+}
+.scroll-content {
+  overflow: auto;  /* redundant, but just in case */
+  display: flex; /* redundant, but just in case */
+  flex-direction: column-reverse;
 }

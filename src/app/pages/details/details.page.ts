@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { ChatService } from 'src/app/services/chat.service';
 
 @Component({
   selector: 'app-details',
@@ -33,7 +34,8 @@ export class DetailsPage implements OnInit {
     private guiaService: GuiaService,
     private toastCtrl: ToastController,
     private authService: AuthService,
-    private favoritesService: FavoritesService
+    private favoritesService: FavoritesService,
+    private chatService: ChatService
   ){
     
     this.guiaId = this.activatedRoute.snapshot.params['id'];
@@ -54,6 +56,10 @@ export class DetailsPage implements OnInit {
   ngOnDestroy() {
     if (this.guiaSubscription) this.guiaSubscription.unsubscribe();
     if (this.userSubscription) this.userSubscription.unsubscribe();
+  }
+
+  chatHandler() {
+    this.chatService.setChat(this.userId, this.user.nome, this.user.foto, this.guia.foto, this.guiaId, this.guia.nome)
   }
 
   loadGuia() {

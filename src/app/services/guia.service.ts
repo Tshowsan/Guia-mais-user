@@ -58,7 +58,7 @@ export class GuiaService {
 
   getGuiaAtivo() {
     //Ppegar da coleção um grupo de guias junto do ID com um parametro específico.
-    return this.afs.collection('Guias', ref => ref.where('ativo', '==', true) ).snapshotChanges().pipe(
+    return this.afs.collection('Guias', ref => ref.orderBy('avaliacao' ,"desc").where('ativo', '==', true) ).snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
           const data = a.payload.doc.data();

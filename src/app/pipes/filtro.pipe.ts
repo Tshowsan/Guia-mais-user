@@ -14,7 +14,8 @@ export class FiltroPipe implements PipeTransform {
 
     return guias.filter( guia => {
       return guia.nome.toLocaleLowerCase().includes(texto)
-             || guia.email.toLocaleLowerCase().includes(texto);
+             || guia.email.toLocaleLowerCase().includes(texto)
+                || guia.linguas.toLocaleLowerCase().includes(texto);
     });
 
   }
