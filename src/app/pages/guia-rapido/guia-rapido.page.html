@@ -15,7 +15,7 @@
 
 <ion-content>
     <ion-list>
-      <ion-item *ngFor="let guia of guias | filtro:textoBuscar">
+      <ion-item *ngFor="let guia of guias | filtro:textoBuscar" lines="none">
         <ion-item class="lista" button [routerLink]="['/details', guia.id]">
           <ion-avatar slot="start">
             <img [src]="guia.foto">
