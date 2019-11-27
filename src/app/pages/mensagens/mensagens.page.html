@@ -6,7 +6,7 @@
 
 <ion-content>
     <div class="chat" *ngFor="let mensagem of mensagens | async">
-        <div ckass="me" *ngIf="userId == mensagem.userId">
+        <div class="me" *ngIf="userId == mensagem.userId">
           {{ mensagem.text }}
         </div>
         <div class="you" *ngIf="userId != mensagem.userId">
