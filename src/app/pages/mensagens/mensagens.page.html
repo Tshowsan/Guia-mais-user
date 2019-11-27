@@ -1,6 +1,9 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>mensagens</ion-title>
+  <ion-toolbar mode='ios' class="topo">
+      <ion-buttons slot="start">
+        <ion-back-button style="color: #fff;" defaultHref="/chat"></ion-back-button>
+      </ion-buttons>
+    <ion-title class="title">mensagens</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -18,7 +21,7 @@
     </div>
 </ion-content>
 
-<ion-footer>
+<ion-footer class="send-menssage">
   <form [formGroup]="mensagensForm">
   <ion-item>
     <ion-input placeholder="Digite uma mensagem" formControlName="text" [(ngModel)]="text"></ion-input>

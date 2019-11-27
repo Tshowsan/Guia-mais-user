@@ -55,7 +55,7 @@ ion-item {
 ion-item {
     // --border-width: 2px;
     // --border-radius: 10px;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 .btn-init {
@@ -79,6 +79,13 @@ ion-back-button {
 
 h2 {
     font-size: 18px;
+    margin-left: 10px;
+}
+
+h3 {
+    font-size: 14px;
+    margin-left: 10px;
+    color: #fff;
 }
 
 span {
@@ -97,12 +104,12 @@ ion-label {
 
 p {
     color: #b2b2b2;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
 }
 
 b {
     color: #b2b2b2;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     font-weight: 400;
 }
 

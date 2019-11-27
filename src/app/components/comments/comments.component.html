@@ -8,10 +8,10 @@
     Enviar
   </ion-button>
 
-  <br>
+
   <h3>Comentários dos usuários:</h3>
 
-  <ion-item *ngFor="let comment of comments | async">
+  <ion-item *ngFor="let comment of comments | async" lines="none">
     <ion-avatar slot="start">
       <img [src]="comment.userFoto">
     </ion-avatar>
