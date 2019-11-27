@@ -74,6 +74,10 @@ export class ChatPage implements OnInit {
     });
   }
 
+  deletarChat(id){
+    this.chatService.deleteChatId(id);
+  }
+
   async presentLoading() {
     this.loading = await this.loadingCtrl.create({ message: 'Aguarde...' });
     return this.loading.present();

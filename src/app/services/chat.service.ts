@@ -55,6 +55,11 @@ export class ChatService {
       );
     }
 
+    deleteChatId(id) {
+      const chatPath = `chats/${id}`;
+      return this.afs.doc(chatPath).delete();
+    }
+
     getUserGuiaChats(userId, guiaId) {
       const chatPath = `chats/${userId}_${guiaId}`;
       return this.afs.doc(chatPath).valueChanges();
