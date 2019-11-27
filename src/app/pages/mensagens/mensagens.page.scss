@@ -1,5 +1,16 @@
-.chat{
+.topo {
+  --background: linear-gradient(207deg, rgb(28, 159, 246) 0%, rgba(90, 196, 249, 1) 84%);
+  --border-width: 0px;
+  --min-height: 80px;
+}
 
+.title {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+.chat{
 
     display: flex;
     flex-direction: column;
@@ -8,12 +19,14 @@
         position: relative;
         margin: 20px 5px 0px;
         max-width: 80%;
-align-self: flex-end;
-padding: 6px 10px 7px;
-border-radius: 15px 15px 0;
-background: #32db64;
-font-size: medium;
-line-height: 1.4;
+        align-self: flex-end;
+        padding: 6px 10px 7px;
+        border-radius: 15px 15px 0;
+        background: #007fff;
+        //background: #32db64;
+        font-size: medium;
+        color: #fff;
+        line-height: 1.4;
 
 .name{
   font-size: small;
@@ -29,10 +42,12 @@ line-height: 1.4;
     max-width: 80%;
     align-self: flex-start;
     padding: 6px 10px 7px;
-border-radius: 15px 15px 15px 0;
-background: rgba(50,219,100,0.5);
-font-size: medium;
-line-height: 1.4;
+    border-radius: 15px 15px 15px 0;
+    background: #239aff;
+    //background: rgba(50,219,100,0.5);
+    font-size: medium;
+    color: #fff;
+    line-height: 1.4;
 
   }
 }
@@ -40,4 +55,10 @@ line-height: 1.4;
   overflow: auto;  /* redundant, but just in case */
   display: flex; /* redundant, but just in case */
   flex-direction: column-reverse;
+  padding: 3% 4%;
+}
+
+.send-menssage {
+  width: 100%;
+  background: #c7c7c7;
 }

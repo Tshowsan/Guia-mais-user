@@ -225,8 +225,8 @@ ion-title {
 ion-item {
     --border-width: 2px;
     --border-radius: 10px;
-    margin-top: 5px;
-    margin-bottom: 30px;
+    margin-top: 25px;
+    margin-bottom: 0;
 }
 
 .btn-init {
@@ -240,12 +240,16 @@ ion-back-button {
 }
 
 
-.errors h6 {
+.errors {
     color: red;
-    text-align: center;
+    h6 {
+        margin: 1px;
+        color: red;
+        text-align: right;  
 
-    ion-input {
-    border: 2px solid red;
+        ion-input {
+            border-color: red;
+        }
     }
 }
 
@@ -269,7 +273,8 @@ ion-back-button {
     ion-item {
         --border-width: 2px;
         --border-radius: 10px;
-        margin-bottom: 5%;
+        margin-bottom: 1%;
+        margin-top: 5%;
     }
 
     .btn-init {
@@ -284,11 +289,12 @@ ion-back-button {
 
 
     .errors h6 {
+        margin: 0%;
         color: red;
-        text-align: center;
+        text-align: right;
 
         ion-input {
-        border: 2px solid red;
+        --border: 2px solid red;
         }
     }
 

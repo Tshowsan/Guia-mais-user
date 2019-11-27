@@ -2,7 +2,7 @@
     width: 100%;
     margin-top: 70px;
     margin-left: 5px;
-    padding-right: 5%;
+    padding-right: 2%;
 }
 
 /* .comment-area {
@@ -39,6 +39,7 @@ ion-item {
 ion-item {
     // --border-width: 2px;
     // --border-radius: 10px;
+    margin-top: 20px;
     margin-bottom: 5%;
 }
 
@@ -63,6 +64,8 @@ ion-back-button {
 
 h3 {
     color: #b2b2b2;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
 span {
@@ -122,4 +125,106 @@ ion-textarea {
 .com-span {
     color: #b2b2b2;
     font-size: 0.8rem;
+}
+
+
+@media (min-width: 240px) and (max-width: 768px) {
+
+    .content {
+        --background: linear-gradient(207deg, rgba(226, 139, 29, 1) 0%, rgba(255, 224, 1, 1) 84%);
+        --border-width: 0px;
+        --min-height: 196px;
+    }
+
+    ion-item {
+        // --border-width: 2px;
+        // --border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 5%;
+    }
+
+    .btn-init {
+        --background: rgb(54, 174, 247);
+        margin-top: 15px;
+        --border-radius: 10px;
+    }
+
+    ion-back-button {
+        --icon-font-size: 30px
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-desc {
+        text-align: center;
+    }
+
+    h3 {
+        color: #b2b2b2;
+        margin-top: 35px;
+        margin-left: 10px;
+    }
+
+    span {
+        color: #fff;
+        font-size: 0.8rem;
+        opacity: 0.6;
+    }
+
+    ion-label {
+        color: #b2b2b2;
+    }
+
+    .icon {
+        color: #b2b2b2;
+    }
+
+    p {
+        color: #b2b2b2;
+        font-size: 1.2rem;
+    }
+
+    b {
+        color: #b2b2b2;
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    h2 {
+        color: #fff;
+    }
+
+    ion-textarea {
+        border: solid 1px #b2b2b2;
+        border-radius: 10px;
+    }
+
+    .title-com {
+        color: #b2b2b2;
+    }
+
+    .com-ion-avatar {
+        width: 65px;
+        height: 65px;
+    }
+
+    .com-h2 {
+        color: #b2b2b2;
+        font-weight: 400;
+        font-size: 1.4rem;
+    }
+
+    .com-p {
+        color: #b2b2b2;
+        font-size: 0.9rem;
+    }
+
+    .com-span {
+        color: #b2b2b2;
+        font-size: 0.8rem;
+    }
+
 }

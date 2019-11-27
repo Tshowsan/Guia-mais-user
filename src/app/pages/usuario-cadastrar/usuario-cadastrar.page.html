@@ -92,38 +92,38 @@
   
           <ion-item class="ion-margin-top" lines="none">
             <ion-input type="text" placeholder="Nome" formControlName="nome" [(ngModel)]="user.nome"></ion-input>
-            <div class="errors" *ngIf="usuarioCadastrarForm.controls.nome.errors">
-              <h6 *ngIf="usuarioCadastrarForm.controls.nome.errors.required"></h6>
-              <h6 *ngIf="usuarioCadastrarForm.controls.nome.errors.minlength">O Nome deve conter no minimo 2 caracteres</h6>
-              <h6 *ngIf="usuarioCadastrarForm.controls.nome.errors.maxlength">O Nome deve conter no maximo 30 caracteres</h6>
-            </div>
           </ion-item>
+          <div class="errors" *ngIf="usuarioCadastrarForm.controls.nome.errors">
+            <h6 *ngIf="usuarioCadastrarForm.controls.nome.errors.required"></h6>
+            <h6 *ngIf="usuarioCadastrarForm.controls.nome.errors.minlength">O Nome deve conter no minimo 2 caracteres</h6>
+            <h6 *ngIf="usuarioCadastrarForm.controls.nome.errors.maxlength">O Nome deve conter no maximo 30 caracteres</h6>
+          </div>
   
           <ion-item class="ion-margin-top"  lines="none">
             <ion-input type="email" placeholder="E-mail" formControlName="email" [(ngModel)]="user.email"></ion-input>
-            <div class="errors" *ngIf="usuarioCadastrarForm.controls.email.errors">
-              <h6 *ngIf="usuarioCadastrarForm.controls.email.errors.required"></h6>
-              <h6 *ngIf="usuarioCadastrarForm.controls.email.errors.pattern">E-mail inválido</h6>
-            </div>
           </ion-item>
-  
+          <div class="errors" *ngIf="usuarioCadastrarForm.controls.email.errors">
+            <h6 *ngIf="usuarioCadastrarForm.controls.email.errors.required"></h6>
+            <h6 *ngIf="usuarioCadastrarForm.controls.email.errors.pattern">E-mail inválido</h6>
+          </div>
+          
           <ion-item class="ion-margin-top" lines="none">
             <ion-input type="number" placeholder="Telefone" formControlName="telefone" [(ngModel)]="user.telefone"></ion-input>
-            <div class="errors" *ngIf="usuarioCadastrarForm.controls.telefone.errors">
-              <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.required"></h6>
-              <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.maxlength">O Telefone deve conter no maximo 12 caracteres</h6>
-              <!-- <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.pattern">Telefone inválido</h6> -->
-            </div>
           </ion-item>
-
+          <div class="errors" *ngIf="usuarioCadastrarForm.controls.telefone.errors">
+            <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.required"></h6>
+            <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.maxlength">O Telefone deve conter no maximo 12 caracteres</h6>
+            <!-- <h6 *ngIf="usuarioCadastrarForm.controls.telefone.errors.pattern">Telefone inválido</h6> -->
+          </div>
+          
           <ion-item class="ion-margin-top" lines="none">
             <ion-input type="password" placeholder="Senha" formControlName="password" [(ngModel)]="user.password"></ion-input>
-            <div class="errors" *ngIf="usuarioCadastrarForm.controls.password.errors">
-              <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.required"></h6>
-              <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.minlength">A senha deve conter no minimo 6 caracteres</h6>
-              <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.maxlength">A senha deve conter no maximo 12 caracteres</h6>
-            </div>
           </ion-item>
+          <div class="errors" *ngIf="usuarioCadastrarForm.controls.password.errors">
+            <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.required"></h6>
+            <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.minlength">A senha deve conter no minimo 6 caracteres</h6>
+            <h6 *ngIf="usuarioCadastrarForm.controls.password.errors.maxlength">A senha deve conter no maximo 12 caracteres</h6>
+          </div>
         </ion-col>
       </ion-row>
 

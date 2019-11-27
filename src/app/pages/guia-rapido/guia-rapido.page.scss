@@ -107,6 +107,13 @@
     width: 95%;
     margin-top: 20px;
   }
+
+  ion-searchbar {
+    width: 100%;
+    margin: auto;
+    padding: 5;
+    margin-bottom: 5px;
+  }
   
   ion-avatar {
     width: 60px !important;  
@@ -169,6 +176,12 @@
 
   ion-toolbar{
     --background: linear-gradient(207deg, rgb(28, 159, 246) 0%, rgba(90, 196, 249, 1) 84%);
+  }
+
+  ion-searchbar {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 5px;
   }
 
   .title {

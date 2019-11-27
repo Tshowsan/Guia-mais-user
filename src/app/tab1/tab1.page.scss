@@ -1,5 +1,6 @@
 .content {
-  --background: linear-gradient(207deg, rgba(90, 196, 249, 1) 0%, rgba(0, 142, 244, 1) 48%);
+  //--background: linear-gradient(207deg, rgba(90, 196, 249, 1) 0%, rgba(0, 142, 244, 1) 48%);
+  --background: linear-gradient(207deg, rgb(28, 159, 246) 0%, rgba(90, 196, 249, 1) 84%);
   --border-width: 0px;
   --min-height: 80px;
   --border-style: none;
@@ -8,9 +9,9 @@
 .logo {
   position: relative;
   align-content: center;
-  width: 150px;
-  height: 60px;
-  margin-left: 20px;
+  width: 200px;
+  height: 75px;
+  margin-left: 590px;
 }
 
 ion-grid {
@@ -23,6 +24,7 @@ ion-item {
 
 ion-row {
   margin-top: 5%;
+  border: none;
 }
 
 .btn-init {
@@ -83,9 +85,13 @@ p {
   .logo {
     position: relative;
     align-content: center;
-    width: 80px;
-    height: 50px;
-    margin-left: 20px;
+    width: 90px;
+    height: 55px;
+    margin-left: 130px;
+  }
+
+  .col-center {
+    border: none;
   }
 
   ion-grid {
