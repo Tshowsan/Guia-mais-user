@@ -51,10 +51,16 @@ export class StarReviewComponent implements OnInit {
   async starHandler(value) {
 
     await this.presentLoading();
-    this.guia.avaliacao = this.avaliacao.toFixed(1)
-    this.updateGuia();
     this.starService.setStar(this.userId, this.userName, this.guiaId, this.guiaName, value);
     await this.loading.dismiss();
+    this.avgRating = this.stars.map(arr => {
+      const ratings = arr.map(v => v.value)
+      this.avaliacao = ratings.reduce((total, val) => total + val) / arr.length;
+      return ratings.reduce((total, val) => total + val) / arr.length;
+    })
+    this.guia.avaliacao = this.avaliacao.toFixed(1)
+    this.updateGuia();
+    
   
   }
 
